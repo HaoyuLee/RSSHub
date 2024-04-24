@@ -23945,6 +23945,39 @@
           "zxx-457"
         ],
         "location": "zhengce/zhengceku.ts"
+      },
+      "/zj/search/:websiteid?/:word/:cateid?": {
+        "path": "/zj/search/:websiteid?/:word/:cateid?",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/zj/search",
+        "parameters": {
+          "websiteid": "搜索范围-全省、各市各区",
+          "word": "搜索关键词",
+          "cateid": "信息分类",
+          "sortType": "排序类型"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": {
+          "source": [
+            "search.zj.gov.cn/jsearchfront/search.do"
+          ],
+          "target": "/gov/zj/search/:websiteid?/:word/:cateid?"
+        },
+        "name": "浙江省人民政府-全省政府网站统一搜索",
+        "url": "search.zj.gov.cn/jsearchfront/search.do",
+        "maintainers": [
+          "HaoyuLee"
+        ],
+        "location": "zj/search.ts"
       }
     },
     "name": "中国人民银行",
