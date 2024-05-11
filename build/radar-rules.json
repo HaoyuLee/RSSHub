@@ -366,6 +366,19 @@
       }
     ]
   },
+  "69shu.top": {
+    "_name": "69书吧",
+    "www": [
+      {
+        "title": "章节",
+        "docs": "https://docs.rsshub.app/routes/reading",
+        "source": [
+          "/book/:id.htm"
+        ],
+        "target": "/69shu/article/:id"
+      }
+    ]
+  },
   "6parkbbs.com": {
     "_name": "留园网",
     "club": [
@@ -1019,6 +1032,14 @@
     "_name": "AP News",
     ".": [
       {
+        "title": "RSS",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:rss"
+        ],
+        "target": "/apnews/rss/:rss"
+      },
+      {
         "title": "Topics",
         "docs": "https://docs.rsshub.app/routes/traditional-media",
         "source": [
@@ -1255,15 +1276,6 @@
     "_name": "北京智源人工智能研究院",
     "hub": [
       {
-        "title": "智源社区 - 评论",
-        "docs": "https://docs.rsshub.app/routes/programming",
-        "source": [
-          "/comments",
-          "/"
-        ],
-        "target": "/baai/hub/comments"
-      },
-      {
         "title": "智源社区 - 活动",
         "docs": "https://docs.rsshub.app/routes/programming",
         "source": [
@@ -1271,6 +1283,16 @@
           "/"
         ],
         "target": "/baai/hub/events"
+      }
+    ],
+    ".": [
+      {
+        "title": "智源社区",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/"
+        ],
+        "target": "/baai(_params,url)=>{const searchParams=new URL(url).searchParams;const tagId=searchParams.get(\"tag_id\");const sort=searchParams.get(\"sort\");const range=searchParams.get(\"time_range\");return`/baai/hub${tagId?`/${tagId}`:\"\"}${sort?`/${sort}`:\"\"}${range?`/${range}`:\"\"}`}"
       }
     ]
   },
@@ -1402,12 +1424,12 @@
         "target": "/bangumi/tv/group/:id"
       },
       {
-        "title": "成员关注动画榜",
+        "title": "成员关注榜",
         "docs": "https://docs.rsshub.app/routes/anime",
         "source": [
-          "/anime"
+          "/:type"
         ],
-        "target": "/bangumi/tv/followrank"
+        "target": "/bangumi/:type/followrank"
       },
       {
         "title": "现实人物的新作品",
@@ -3046,20 +3068,28 @@
     "_name": "cnBeta.COM",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/"
+          "/category/:id"
         ],
-        "target": "/cnbeta/:type/:id"
+        "target": "/cnbetaparams=>`/cnbeta/category/${params.id.replace(\".htm\",\"\")}`"
       },
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "头条资讯",
+        "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/"
         ],
         "target": "/cnbeta/"
+      },
+      {
+        "title": "主题",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/topics/:id"
+        ],
+        "target": "/cnbetaparams=>`/cnbeta/topics/${params.id.replace(\".htm\",\"\")}`"
       }
     ]
   },
@@ -3296,6 +3326,19 @@
           "/"
         ],
         "target": "/coomer/posts"
+      }
+    ]
+  },
+  "copernicium.tw": {
+    "_name": "日新说",
+    "www": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/copernicium/:category"
       }
     ]
   },
@@ -3736,7 +3779,7 @@
         "target": "/daily/discussed"
       },
       {
-        "title": "Unknown",
+        "title": "Popular",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
           "/popular"
@@ -3750,6 +3793,15 @@
           "/popular"
         ],
         "target": "/daily/upvoted"
+      },
+      {
+        "title": "User Posts",
+        "docs": "https://docs.rsshub.app/routes/social-media",
+        "source": [
+          "/:userId/posts",
+          "/:userId"
+        ],
+        "target": "/daily/user/:userId"
       }
     ]
   },
@@ -3757,16 +3809,7 @@
     "_name": "Darwin Awards",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
-        "source": [
-          "/darwin",
-          "/"
-        ],
-        "target": "/darwinawards/all"
-      },
-      {
-        "title": "Unknown",
+        "title": "Award Winners",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
           "/darwin",
@@ -3899,6 +3942,19 @@
       }
     ]
   },
+  "deepin.org": {
+    "_name": "Deepin",
+    "bbs": [
+      {
+        "title": "BBS Home Page",
+        "docs": "https://docs.rsshub.app/routes/bbs",
+        "source": [
+          "/user/:user_id"
+        ],
+        "target": "/deepin/homepage/:user_id"
+      }
+    ]
+  },
   "deeplearning.ai": {
     "_name": "deeplearning.ai",
     "www": [
@@ -4021,6 +4077,19 @@
       }
     ]
   },
+  "digitalcameraworld.com": {
+    "_name": "Digital Camera World",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/digitalcameraworld/news"
+      }
+    ]
+  },
   "discord.com": {
     "_name": "Discord",
     ".": [
@@ -4117,7 +4186,7 @@
   },
   "dnaindia.com": {
     "_name": "DNA India",
-    ".": [
+    "www": [
       {
         "title": "News",
         "docs": "https://docs.rsshub.app/routes/traditional-media",
@@ -4127,10 +4196,10 @@
         "target": "/dnaindia/:category"
       },
       {
-        "title": "News",
+        "title": "Topic",
         "docs": "https://docs.rsshub.app/routes/traditional-media",
         "source": [
-          "/:category"
+          "/topic/:topic"
         ],
         "target": "/dnaindia/topic/:topic"
       }
@@ -5805,6 +5874,147 @@
       }
     ]
   },
+  "ah.gov.cn": {
+    "_name": "中国人民银行",
+    "kjt": [
+      {
+        "title": "安徽省科学技术厅",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/:category"
+        ],
+        "target": "/govparams=>{const category=params.category;return`/gov/ah/kjt${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "科技资讯 - 通知公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/tzgg/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/tzgg"
+      },
+      {
+        "title": "科技资讯 - 工作动态",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/gzdt/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/gzdt"
+      },
+      {
+        "title": "科技资讯 - 基层科技",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/jckj/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/jckj"
+      },
+      {
+        "title": "科技资讯 - 媒体聚焦",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/mtjj/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/mtjj"
+      },
+      {
+        "title": "科技资讯 - 重要转载",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/zyzz/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/zyzz"
+      },
+      {
+        "title": "科技资讯 - 图片视频",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzx/tpsp/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzx/tpsp"
+      },
+      {
+        "title": "科技统计 - 技术市场交易",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjtj/jsscjy/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjtj/jsscjy"
+      },
+      {
+        "title": "科技统计 - 科技成果公报",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjtj/kjcggb/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjtj/kjcggb"
+      },
+      {
+        "title": "科技统计 - 孵化载体发展",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjtj/cyfhfz/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjtj/cyfhfz"
+      },
+      {
+        "title": "科技数据 - 创新企业",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxqy/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxqy"
+      },
+      {
+        "title": "科技数据 - 创新项目",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxxm/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxxm"
+      },
+      {
+        "title": "科技数据 - 创新成果",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxcg/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxcg"
+      },
+      {
+        "title": "科技数据 - 转化基金入库项目",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/zhjjrkxm/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/zhjjrkxm"
+      },
+      {
+        "title": "科技数据 - 创新平台",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxpt/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxpt"
+      },
+      {
+        "title": "科技数据 - 创新园区",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxyq/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxyq"
+      },
+      {
+        "title": "科技数据 - 创新许可",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kjzy/kjsj/cxxk/index.html"
+        ],
+        "target": "/gov/ah/kjt/kjzy/kjsj/cxxk"
+      }
+    ]
+  },
   "bjedu.gov.cn": {
     "_name": "中国人民银行",
     "gh": [
@@ -6317,6 +6527,32 @@
       }
     ]
   },
+  "zj.gov.cn": {
+    "_name": "中国人民银行",
+    "search": [
+      {
+        "title": "浙江省人民政府-全省政府网站统一搜索",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jsearchfront/search.do"
+        ],
+        "target": "/gov/zj/search/:websiteid?/:word/:cateid?"
+      }
+    ]
+  },
+  "gq.com": {
+    "_name": "GQ",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/"
+        ],
+        "target": "/gq/news"
+      }
+    ]
+  },
   "greasyfork.org": {
     "_name": "Greasy Fork",
     ".": [
@@ -6557,7 +6793,7 @@
   },
   "ycombinator.com": {
     "_name": "Hacker News",
-    ".": [
+    "news": [
       {
         "title": "用户",
         "docs": "https://docs.rsshub.app/routes/programming",
@@ -7042,23 +7278,7 @@
         "target": "/houxu/events"
       },
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/"
-        ],
-        "target": "/houxu/featured"
-      },
-      {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/"
-        ],
-        "target": "/houxu/index"
-      },
-      {
-        "title": "Unknown",
+        "title": "热点",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/"
@@ -7615,6 +7835,35 @@
           "/"
         ],
         "target": "/ieee-security/security-privacy"
+      }
+    ]
+  },
+  "iehou.com": {
+    "_name": "网猴线报",
+    ".": [
+      {
+        "title": "最新线报",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/iehou/"
+      },
+      {
+        "title": "24小时热门",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/page-dayhot.htm"
+        ],
+        "target": "/iehou/dayhot"
+      },
+      {
+        "title": "一周热门",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/page-weekhot.htm"
+        ],
+        "target": "/iehou/weekhot"
       }
     ]
   },
@@ -8389,6 +8638,19 @@
       }
     ]
   },
+  "keylol.com": {
+    "_name": "其乐",
+    ".": [
+      {
+        "title": "论坛",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/:path"
+        ],
+        "target": "/keylol(params,url)=>url.replaceAll(\"forum.php?\",\"\")"
+      }
+    ]
+  },
   "kimlaw.or.kr": {
     "_name": "The Korea Institute of Marine Law",
     ".": [
@@ -8413,6 +8675,27 @@
           "/blog/*"
         ],
         "target": "/konghq/blog-posts"
+      }
+    ]
+  },
+  "kpmg.com": {
+    "_name": "KPMG",
+    ".": [
+      {
+        "title": "Insights",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/xx/en/home/insights.html"
+        ],
+        "target": "/kpmg/insights/en"
+      },
+      {
+        "title": "Insights",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/cn/zh/home/insights.html"
+        ],
+        "target": "/kpmg/insights/zh"
       }
     ]
   },
@@ -8666,6 +8949,20 @@
       }
     ]
   },
+  "lianxh.cn": {
+    "_name": "连享会",
+    "www": [
+      {
+        "title": "精彩资讯",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/blogs/all.html",
+          "/"
+        ],
+        "target": "/lianxh/:category?"
+      }
+    ]
+  },
   "lifeweek.com.cn": {
     "_name": "三联生活周刊",
     ".": [
@@ -8718,6 +9015,19 @@
           "/"
         ],
         "target": "/line/today/:edition?/:tab?"
+      }
+    ]
+  },
+  "linkedin.com": {
+    "_name": "LinkedIn 领英",
+    "www": [
+      {
+        "title": "Jobs",
+        "docs": "https://docs.rsshub.app/routes/social-media",
+        "source": [
+          "/jobs/search"
+        ],
+        "target": "/linkedin(params,url)=>{const searchParams=new URLSearchParams(new URL(url).search);const fJT=(0,import_utils.parseRouteParam)(searchParams.get(\"f_JT\"));const fE=(0,import_utils.parseRouteParam)(searchParams.get(\"f_E\"));const keywords=encodeURIComponent(searchParams.get(\"keywords\")||\"\");const newSearchParams=new URLSearchParams;for(const[key,value]of searchParams.entries()){if(![\"f_JT\",\"f_E\",\"keywords\"].includes(key)){newSearchParams.append(key,value)}}return`/linkedin/jobs/${fJT}/${fE}/${keywords}/?${newSearchParams.toString()}`}"
       }
     ]
   },
@@ -8870,6 +9180,91 @@
       }
     ]
   },
+  "lrepacks.net": {
+    "_name": "REPACK скачать",
+    ".": [
+      {
+        "title": "REPACK скачать",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/:category"
+        ],
+        "target": "/lrepacksparams=>{const category=params.category;return`/lrepacks${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "Новые репаки на сегодня",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/novye-repaki-elchupacabra/"
+        ],
+        "target": "/lrepacks/novye-repaki-elchupacabra"
+      },
+      {
+        "title": "Системные программы",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-sistemnyh-programm/"
+        ],
+        "target": "/lrepacks/repaki-sistemnyh-programm"
+      },
+      {
+        "title": "Программы для графики",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-programm-dlya-grafiki/"
+        ],
+        "target": "/lrepacks/repaki-programm-dlya-grafiki"
+      },
+      {
+        "title": "Программы для интернета",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-programm-dlya-interneta/"
+        ],
+        "target": "/lrepacks/repaki-programm-dlya-interneta"
+      },
+      {
+        "title": "Мультимедиа программы",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-multimedia-programm/"
+        ],
+        "target": "/lrepacks/repaki-multimedia-programm"
+      },
+      {
+        "title": "Программы для офиса",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-programm-dlya-ofisa/"
+        ],
+        "target": "/lrepacks/repaki-programm-dlya-ofisa"
+      },
+      {
+        "title": "Разные программы",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/repaki-raznyh-programm/"
+        ],
+        "target": "/lrepacks/repaki-raznyh-programm"
+      },
+      {
+        "title": "Системные библиотеки",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/sistemnye-biblioteki/"
+        ],
+        "target": "/lrepacks/sistemnye-biblioteki"
+      },
+      {
+        "title": "Важная информация",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/informaciya/"
+        ],
+        "target": "/lrepacks/informaciya"
+      }
+    ]
+  },
   "lsnu.edu.cn": {
     "_name": "乐山师范学院",
     ".": [
@@ -8995,6 +9390,19 @@
           "/app/mac/:appId/:appSlug"
         ],
         "target": "/macupdate/app/:appId/:appSlug?"
+      }
+    ]
+  },
+  "magnumphotos.com": {
+    "_name": "Magnum Photos",
+    ".": [
+      {
+        "title": "Magazine",
+        "docs": "https://docs.rsshub.app/routes/picture",
+        "source": [
+          "/"
+        ],
+        "target": "/magnumphotos/magazine"
       }
     ]
   },
@@ -9582,12 +9990,313 @@
         "target": "/nber/papers"
       },
       {
-        "title": "All Papers",
+        "title": "New Papers",
         "docs": "https://docs.rsshub.app/routes/journal",
         "source": [
           "/papers"
         ],
-        "target": "/nber/news"
+        "target": "/nber/new"
+      }
+    ]
+  },
+  "ncc-cma.net": {
+    "_name": "国家气候中心",
+    "cmdp": [
+      {
+        "title": "日平均气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/RPJQWQYZ"
+      },
+      {
+        "title": "近5天平均气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ5TPJQWJP"
+      },
+      {
+        "title": "近10天平均气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ10TQWJP"
+      },
+      {
+        "title": "近20天平均气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ20TQWJP"
+      },
+      {
+        "title": "近30天平均气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ30TQWJP"
+      },
+      {
+        "title": "本月以来气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BYYLQWJP"
+      },
+      {
+        "title": "本季以来气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BJYLQWJP"
+      },
+      {
+        "title": "本年以来气温距平",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BNYLQWJP"
+      },
+      {
+        "title": "日降水量分布",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/QGRJSLFBT0808S"
+      },
+      {
+        "title": "近5天降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ5TJSLFBT"
+      },
+      {
+        "title": "近10天降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ10TJSL"
+      },
+      {
+        "title": "近20天降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ20TJSL"
+      },
+      {
+        "title": "近30天降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ30TJSL"
+      },
+      {
+        "title": "本月以来降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/ncc-cma/cmdp/image/BYYLJSL"
+      },
+      {
+        "title": "本季以来降水量",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BJYLJSL"
+      },
+      {
+        "title": "近10天降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ10TJSLJP"
+      },
+      {
+        "title": "近20天降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ20TJSLJP"
+      },
+      {
+        "title": "近30天降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/ZJ30TJSLJP"
+      },
+      {
+        "title": "本月以来降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BYYLJSLJPZYQHZ"
+      },
+      {
+        "title": "本季以来降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BJYLJSLJPZJQHZ"
+      },
+      {
+        "title": "本年以来降水量距平百分率",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/BNYLJSLJP"
+      },
+      {
+        "title": "气温距平（最近10天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmeana10_"
+      },
+      {
+        "title": "气温距平（最近20天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmeana20_"
+      },
+      {
+        "title": "气温距平（最近30天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmeana30_"
+      },
+      {
+        "title": "气温距平（最近90天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmeana90_"
+      },
+      {
+        "title": "最低气温距平（最近30天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmina30_"
+      },
+      {
+        "title": "最低气温距平（最近90天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmina90_"
+      },
+      {
+        "title": "最高气温距平（最近30天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmaxa30_"
+      },
+      {
+        "title": "最高气温距平（最近90天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbtmaxa90_"
+      },
+      {
+        "title": "降水量（最近10天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbrain10_"
+      },
+      {
+        "title": "降水量（最近20天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbrain20_"
+      },
+      {
+        "title": "降水量（最近30天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbrain30_"
+      },
+      {
+        "title": "降水量（最近90天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbrain90_"
+      },
+      {
+        "title": "降水距平百分率（最近10天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbraina10_"
+      },
+      {
+        "title": "降水距平百分率（最近20天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbraina20_"
+      },
+      {
+        "title": "降水距平百分率（最近30天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbraina30_"
+      },
+      {
+        "title": "降水距平百分率（最近90天）",
+        "docs": "https://docs.rsshub.app/routes/forecast",
+        "source": [
+          "/cn/index.htm"
+        ],
+        "target": "/ncc-cma/cmdp/image/glbraina90_"
       }
     ]
   },
@@ -9717,6 +10426,19 @@
           "/"
         ],
         "target": "/newsmarket/:category?"
+      }
+    ]
+  },
+  "newyorker.com": {
+    "_name": "New Yorker",
+    ".": [
+      {
+        "title": "The New Yorker",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/feed/:category/:subCategory"
+        ],
+        "target": "/newyorker/:category/:subCategory?"
       }
     ]
   },
@@ -10536,6 +11258,40 @@
       }
     ]
   },
+  "olevod.one": {
+    "_name": "欧乐影院",
+    "www": [
+      {
+        "title": "视频",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/vod/:id"
+        ],
+        "target": "/olevod/vod/:id"
+      },
+      {
+        "title": "最新视频",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/"
+        ],
+        "target": "/olevod/vodlist"
+      }
+    ]
+  },
+  "ollama.com": {
+    "_name": "Ollama",
+    ".": [
+      {
+        "title": "Models",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/library"
+        ],
+        "target": "/ollama/library"
+      }
+    ]
+  },
   "onet.pl": {
     "_name": "Onet",
     "wiadomosci": [
@@ -10719,6 +11475,27 @@
       }
     ]
   },
+  "p-articles.com": {
+    "_name": "虚词",
+    ".": [
+      {
+        "title": "虛詞作者",
+        "docs": "https://docs.rsshub.app/routes/reading",
+        "source": [
+          "/contributors/:author"
+        ],
+        "target": "/p-articles/contributors/:author"
+      },
+      {
+        "title": "版块",
+        "docs": "https://docs.rsshub.app/routes/reading",
+        "source": [
+          "/:section/"
+        ],
+        "target": "/p-articles/section/:section"
+      }
+    ]
+  },
   "panewslab.com": {
     "_name": "PANews",
     ".": [
@@ -10739,14 +11516,6 @@
         "target": "/panewslab/column/:id"
       },
       {
-        "title": "深度",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/"
-        ],
-        "target": "/panewslab/:category?"
-      },
-      {
         "title": "快讯",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
@@ -10755,12 +11524,13 @@
         "target": "/panewslab/news"
       },
       {
-        "title": "快讯",
+        "title": "深度",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
-          "/"
+          "/",
+          "/zh/profundity/index.html"
         ],
-        "target": "/panewslab/newsflash"
+        "target": "/panewslab/profundity/:category?"
       },
       {
         "title": "专题",
@@ -13336,6 +14106,35 @@
       }
     ]
   },
+  "sketis.net": {
+    "_name": "Sketis | Website of Dr. Makarius Wenzel",
+    "isabelle-dev": [
+      {
+        "title": "Isabelle Development Blogs",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/phame/",
+          "/phame/blog/",
+          "/phame/blog/view/:blog/",
+          "/phame/post/",
+          "/phame/post/view/:post_id/:post_title/"
+        ],
+        "target": "/sketis/isabelle-dev/blog/1"
+      },
+      {
+        "title": "Isabelle Development Blogs",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/phame/",
+          "/phame/blog/",
+          "/phame/blog/view/:blog/",
+          "/phame/post/",
+          "/phame/post/view/:post_id/:post_title/"
+        ],
+        "target": "/sketis/isabelle-dev/blog/2"
+      }
+    ]
+  },
   "slowmist.com": {
     "_name": "慢雾科技",
     ".": [
@@ -13433,6 +14232,19 @@
           "/books/tag/:tag"
         ],
         "target": "/sobooks/tag/:tag"
+      }
+    ]
+  },
+  "sohu.com": {
+    "_name": "搜狐号",
+    "mp": [
+      {
+        "title": "最新",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/profile"
+        ],
+        "target": "/sohu(_params,url)=>`/sohu/mp/${new URL(url).searchParams.get(\"xpt\")}`"
       }
     ]
   },
@@ -13726,10 +14538,11 @@
     "_name": "四川工商学院",
     "jsjxy": [
       {
-        "title": "计算机学院通知公告",
+        "title": "计算机学院 - 通知公告",
         "docs": "https://docs.rsshub.app/routes/university",
         "source": [
           "/news",
+          "/",
           "/"
         ],
         "target": "/stbu/jsjxy"
@@ -13737,7 +14550,7 @@
     ],
     ".": [
       {
-        "title": "Unknown",
+        "title": "学院新闻",
         "docs": "https://docs.rsshub.app/routes/university",
         "source": [
           "/html/news/xueyuan",
@@ -14223,15 +15036,7 @@
         "target": "/techflowpost/express"
       },
       {
-        "title": "快讯",
-        "docs": "https://docs.rsshub.app/routes/finance",
-        "source": [
-          "/newsletter/index.html"
-        ],
-        "target": "/techflowpost/newsflash"
-      },
-      {
-        "title": "Unknown",
+        "title": "首页",
         "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
           "/"
@@ -14327,19 +15132,6 @@
       }
     ]
   },
-  "thecatcity.com": {
-    "_name": "貓奴日常",
-    ".": [
-      {
-        "title": "分類",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/"
-        ],
-        "target": "/thecatcity/:term?"
-      }
-    ]
-  },
   "thehindu.com": {
     "_name": "The Hindu",
     ".": [
@@ -14350,6 +15142,43 @@
           "/topic/:topic"
         ],
         "target": "/thehindu/topic/:topic"
+      }
+    ]
+  },
+  "theinitium.com": {
+    "_name": "端传媒",
+    ".": [
+      {
+        "title": "作者",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/author/:type"
+        ],
+        "target": "/theinitium/author/:type"
+      },
+      {
+        "title": "专题・栏目",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/channel/:type"
+        ],
+        "target": "/theinitium/channel/:type"
+      },
+      {
+        "title": "作者",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/author/:type"
+        ],
+        "target": "/theinitium/author/:type"
+      },
+      {
+        "title": "话题・标签",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tags/:type"
+        ],
+        "target": "/theinitium/tags/:type"
       }
     ]
   },
@@ -14392,6 +15221,64 @@
           "/"
         ],
         "target": "/thepaper/839studio/:id"
+      }
+    ]
+  },
+  "thepetcity.co": {
+    "_name": "PetCity 毛孩日常",
+    ".": [
+      {
+        "title": "Pet Staff 毛孩好物",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/cute-item",
+          "/"
+        ],
+        "target": "/thepetcity/1"
+      },
+      {
+        "title": "Funny News毛孩趣聞",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/funny-news",
+          "/"
+        ],
+        "target": "/thepetcity/2"
+      },
+      {
+        "title": "Knowledge飼養大全",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/knowledge",
+          "/"
+        ],
+        "target": "/thepetcity/3"
+      },
+      {
+        "title": "Hot Spot 毛孩打卡點",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/hot-spot",
+          "/"
+        ],
+        "target": "/thepetcity/4"
+      },
+      {
+        "title": "Raise Pets 養寵物新手",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/raise-cats",
+          "/"
+        ],
+        "target": "/thepetcity/5"
+      },
+      {
+        "title": "PetCity 毛孩日常 | 飼養竉物、竉物用品、萌寵趣聞",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/thepetcity/:term?"
       }
     ]
   },
@@ -14691,6 +15578,56 @@
           "/"
         ],
         "target": "/trow/portal"
+      }
+    ]
+  },
+  "tsinghua.edu.cn": {
+    "_name": "清华大学",
+    "lib": [
+      {
+        "title": "图书馆资源动态",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/zydt/:category"
+        ],
+        "target": "/tsinghuaparams=>{const category=params.category?.replace(/\\.htm$/,\"\");return`/tsinghua/lib/zydt${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "图书馆资源动态",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/zydt"
+        ],
+        "target": "/tsinghua/lib/zydt"
+      },
+      {
+        "title": "图书馆已购资源动态",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/zydt/yg"
+        ],
+        "target": "/tsinghua/lib/zydt/yg"
+      },
+      {
+        "title": "图书馆试用资源动态",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/zydt/sy"
+        ],
+        "target": "/tsinghua/lib/zydt/sy"
+      }
+    ]
+  },
+  "ttv.com.tw": {
+    "_name": "台視新聞網",
+    "news": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:category"
+        ],
+        "target": "/ttv/:category?"
       }
     ]
   },
@@ -15067,6 +16004,17 @@
   },
   "upc.edu.cn": {
     "_name": "中国石油大学（华东）",
+    "jwc": [
+      {
+        "title": "教务处通知公告",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/",
+          "/:type/list.htm"
+        ],
+        "target": "/upc/jwc/:type?"
+      }
+    ],
     "zs.gs": [
       {
         "title": "研究生院通知公告",
@@ -15584,7 +16532,7 @@
     "_name": "新假期周刊",
     ".": [
       {
-        "title": "Unknown",
+        "title": "最新文章",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
           "/"
@@ -15644,6 +16592,19 @@
           "/profile/:uid"
         ],
         "target": "/weibo/user/:uid"
+      }
+    ]
+  },
+  "wellcee.com": {
+    "_name": "Wellcee 唯心所寓",
+    "www": [
+      {
+        "title": "支持的城市",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/"
+        ],
+        "target": "/wellcee/support-city"
       }
     ]
   },
@@ -15789,11 +16750,19 @@
       }
     ]
   },
-  "wnacg.org": {
+  "wnacg.com": {
     "_name": "紳士漫畫",
     ".": [
       {
-        "title": "Unknown",
+        "title": "分类更新",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/*"
+        ],
+        "target": "/wnacg(_,url)=>`/wnacg/category/${new URL(url).pathname.match(/albums-index-cate-(\\d+)\\.html$/)[1]}`"
+      },
+      {
+        "title": "最新",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
           "/albums.html",
@@ -15802,22 +16771,12 @@
         "target": "/wnacg/"
       },
       {
-        "title": "Unknown",
+        "title": "標籤更新",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
-          "/albums.html",
-          "/"
+          "/*"
         ],
-        "target": "/wnacg/category/:cid"
-      },
-      {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
-        "source": [
-          "/albums.html",
-          "/"
-        ],
-        "target": "/wnacg/tag/:tag"
+        "target": "/wnacg(_,url)=>`/wnacg/tag/${new URL(url).pathname.match(/albums-index-tag-(.+?)\\.html$/)[1]}`"
       }
     ]
   },
@@ -16201,6 +17160,19 @@
       }
     ]
   },
+  "yenpress.com": {
+    "_name": "Yen Press",
+    ".": [
+      {
+        "title": "Series",
+        "docs": "https://docs.rsshub.app/routes/reading",
+        "source": [
+          "/series/:name"
+        ],
+        "target": "/yenpress/series/:name"
+      }
+    ]
+  },
   "yicai.com": {
     "_name": "第一财经",
     ".": [
@@ -16361,10 +17333,10 @@
     ]
   },
   "youtube.com": {
-    "_name": "YouTube Live",
+    "_name": "YouTube",
     "www": [
       {
-        "title": "Channel",
+        "title": "Channel with id",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
           "/channel/:id"
@@ -16389,7 +17361,7 @@
         "target": "/youtube/subscriptions"
       },
       {
-        "title": "User",
+        "title": "Channel with username",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
           "/user/:username"
