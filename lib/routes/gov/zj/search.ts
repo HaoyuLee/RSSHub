@@ -5,7 +5,7 @@ import { load } from 'cheerio';
 import dayjs from 'dayjs';
 
 export const route: Route = {
-    path: '/zj/search/:websiteid?/:word/:cateid?',
+    path: '/zj/search/:websiteid?/:word/:cateid?/:sortType?',
     categories: ['government'],
     example: '/gov/zj/search',
     parameters: {
@@ -14,27 +14,21 @@ export const route: Route = {
         cateid: '信息分类-默认：658（全部）',
         sortType: '排序类型-默认：2（按时间）',
     },
-    radar: [{
-        source: ['search.zj.gov.cn/jsearchfront/search.do'],
-        target: '/zj/search/:websiteid?/:word/:cateid?',
-    }],
+    radar: [
+        {
+            source: ['search.zj.gov.cn/jsearchfront/search.do'],
+            target: '/zj/search/:websiteid?/:word/:cateid?/:sortType?',
+        },
+    ],
     name: '浙江省人民政府-全省政府网站统一搜索',
     url: 'search.zj.gov.cn/jsearchfront/search.do',
     maintainers: ['HaoyuLee'],
-    description: `
-        | 行政区域         | websiteid |
-        | ------------ | -- |
-        | 宁波市本级     | 330201000000000  |
-
-        | 搜索关键词         | word    |
-
-        | 信息分类         | cateid    |
-
-        | 排序类型         | sortType    |
-        | ------------ | -- |
-        | 按相关度     | 1  |
-        | 按时间     | 2  |
-    `,
+    description: `| 参数    | 说明 | 默认值                    |
+|-------| -- |------------------------|
+| websiteid  | 行政区域 | 330201000000000（宁波市本级） |
+| word | 搜索关键词    | ‘人才’                   |
+| cateid  | 信息分类    | 658（全部）                |
+| sortType  |   排序类型  | 2（按时间）                 |`,
     async handler(ctx) {
         const { websiteid = '330201000000000', word = '人才', cateid = 658, sortType = 2 } = ctx.req.param();
         const {
@@ -69,6 +63,17 @@ export const route: Route = {
                     description: $('.newsDescribe>a').text() || '',
                 };
             }) || [];
+        // items.map(async (item) => {
+        //     return await cache.tryGet(item.link, async () => {
+        //         const { data: article } = await got.get(item.link);
+        //         const $ = await load(article);
+        //         return {
+        //             ...item,
+        //             pubDate: $('#c > tbody > tr.fwly > td > ul.list > li:nth-child(1)').text().trim().replace('日期：', ''),
+        //             description: $('#c > tbody').html(),
+        //         };
+        //     });
+        // });
         return {
             title: '浙江省人民政府-全省政府网站统一搜索',
             link: 'https://search.zj.gov.cn/jsearchfront/search.do',
