@@ -3993,7 +3993,9 @@
       "*": {
         "path": "*",
         "name": "Unknown",
-        "maintainers": [],
+        "maintainers": [
+          "nczitzk"
+        ],
         "location": "index.ts"
       }
     },
@@ -5235,6 +5237,25 @@
     },
     "name": "中国汽车工业协会统计信息网",
     "url": "auto-stats.org.cn"
+  },
+  "autocentre": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "name": "Автомобільний сайт N1 в Україні",
+        "categories": [
+          "new-media"
+        ],
+        "maintainers": [
+          "driversti"
+        ],
+        "example": "/autocentre",
+        "location": "index.ts"
+      }
+    },
+    "name": "Автоцентр.ua",
+    "url": "autocentre.ua",
+    "description": "Автоцентр.ua: автоновини - Автомобільний сайт N1 в Україні"
   },
   "baai": {
     "routes": {
@@ -8224,6 +8245,60 @@
     "name": "北京林业大学",
     "url": "graduate.bjfu.edu.cn"
   },
+  "bjnews": {
+    "routes": {
+      "/cat/:cat": {
+        "path": "/cat/:cat",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/bjnews/cat/depth",
+        "parameters": {
+          "cat": "分类, 可从URL中找到"
+        },
+        "features": {},
+        "radar": [
+          {
+            "source": [
+              "www.bjnews.com.cn/:cat"
+            ]
+          }
+        ],
+        "name": "分类",
+        "maintainers": [
+          "dzx-dzx"
+        ],
+        "url": "www.bjnews.com.cn",
+        "location": "cat.ts"
+      },
+      "/column/:column": {
+        "path": "/column/:column",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/bjnews/column/204",
+        "parameters": {
+          "column": "栏目ID, 可从手机版网页URL中找到"
+        },
+        "features": {},
+        "radar": [
+          {
+            "source": [
+              "m.bjnews.com.cn/column/:column.htm"
+            ]
+          }
+        ],
+        "name": "分类",
+        "maintainers": [
+          "dzx-dzx"
+        ],
+        "url": "www.bjnews.com.cn",
+        "location": "column.ts"
+      }
+    },
+    "name": "新京报",
+    "url": "www.bjnews.com.cn"
+  },
   "bjp": {
     "routes": {
       "/apod": {
@@ -8404,7 +8479,7 @@
         ],
         "example": "/bjx/fd/yw",
         "parameters": {
-          "type": "文章分类"
+          "type": "文章分类，详见下表"
         },
         "features": {
           "requireConfig": false,
@@ -10826,7 +10901,7 @@
             ]
           }
         ],
-        "description": "\n:::tip\n存在**二级分类**的**一级分类**不能单独当作参数，如：`/cccfna/hangyezixun`\n:::\n    \n文章的目录分级如下:\n\n- shanghuidongtai（商会通知）\n- meirigengxin（每日更新）\n- tongzhigonggao（通知公告）\n- hangyezixun（行业资讯）\n  - zhengcedaohang（政策导航）\n  - yujinxinxi（预警信息）\n  - shichangdongtai（市场动态）\n  - gongxuxinxi（供需信息）\n- maoyitongji（贸易统计）\n  - tongjikuaibao（统计快报）\n  - hangyetongji（行业统计）\n  - guobiemaoyi（国别贸易）\n  - maoyizhinan（贸易指南）\n- nongchanpinbaogao（农产品报告）\n  - nongchanpinyuebao（农产品月报）\n  - zhongdianchanpinyuebao（重点产品月报）\n  - zhongdianchanpinzoushi（重点产品走势）",
+        "description": "\n:::tip\n存在**二级分类**的**一级分类**不能单独当作参数，如：`/cccfna/hangyezixun`\n:::\n\n文章的目录分级如下:\n\n- shanghuidongtai（商会通知）\n- meirigengxin（每日更新）\n- tongzhigonggao（通知公告）\n- hangyezixun（行业资讯）\n  - zhengcedaohang（政策导航）\n  - yujinxinxi（预警信息）\n  - shichangdongtai（市场动态）\n  - gongxuxinxi（供需信息）\n- maoyitongji（贸易统计）\n  - tongjikuaibao（统计快报）\n  - hangyetongji（行业统计）\n  - guobiemaoyi（国别贸易）\n  - maoyizhinan（贸易指南）\n- nongchanpinbaogao（农产品报告）\n  - nongchanpinyuebao（农产品月报）\n  - zhongdianchanpinyuebao（重点产品月报）\n  - zhongdianchanpinzoushi（重点产品走势）",
         "name": "资讯信息",
         "maintainers": [
           "hualiong"
@@ -11470,6 +11545,43 @@
     "name": "中国期货业协会",
     "url": "cfachina.org"
   },
+  "cffex": {
+    "routes": {
+      "/announcement": {
+        "path": "/announcement",
+        "name": "交易所公告",
+        "url": "www.cffex.com.cn",
+        "maintainers": [
+          "ChenXiangcheng1"
+        ],
+        "example": "/cffex/announcement",
+        "parameters": {},
+        "description": "",
+        "categories": [
+          "government"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "cffex.com.cn"
+            ],
+            "target": "/announcement"
+          }
+        ],
+        "location": "announcement.ts"
+      }
+    },
+    "name": "中国金融期货交易所",
+    "url": "cffex.com.cn"
+  },
   "cfmmc": {
     "routes": {
       "/:id{.+}?": {
@@ -12103,6 +12215,40 @@
     },
     "name": "中国作家网",
     "url": "chinawriter.com.cn"
+  },
+  "chlinlearn": {
+    "routes": {
+      "/daily-blog": {
+        "path": "/daily-blog",
+        "name": "值得一读技术博客",
+        "maintainers": [
+          "huyyi"
+        ],
+        "categories": [
+          "programming"
+        ],
+        "example": "/chlinlearn/daily-blog",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "daily-blog.chlinlearn.top/blogs/*"
+            ],
+            "target": "/chlinlearn/daily-blog"
+          }
+        ],
+        "location": "daily-blog.ts"
+      }
+    },
+    "name": "chlinlearn的技术博客",
+    "url": "daily-blog.chlinlearn.top"
   },
   "chsi": {
     "routes": {
@@ -16501,7 +16647,7 @@
           "requireConfig": [
             {
               "name": "DISCORD_AUTHORIZATION",
-              "description": ""
+              "description": "Discord authorization header from the browser"
             }
           ],
           "requirePuppeteer": false,
@@ -31872,6 +32018,53 @@
     "name": "Inoreader",
     "url": "inoreader.com"
   },
+  "inspirehep": {
+    "routes": {
+      "/authors/:id": {
+        "path": "/authors/:id",
+        "example": "/inspirehep/authors/1696909",
+        "parameters": {
+          "id": "Author ID"
+        },
+        "name": "Author Search",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "radar": [
+          {
+            "source": [
+              "inspirehep.net/authors/:id"
+            ]
+          }
+        ],
+        "location": "author.ts"
+      },
+      "/literature/:q": {
+        "path": "/literature/:q",
+        "example": "/inspirehep/literature/Physics",
+        "parameters": {
+          "q": "Search keyword"
+        },
+        "name": "Literature Search",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "radar": [
+          {
+            "source": [
+              "inspirehep.net/literature"
+            ]
+          }
+        ],
+        "location": "literature.ts"
+      }
+    },
+    "name": "INSPIRE",
+    "url": "inspirehep.net",
+    "categories": [
+      "journal"
+    ]
+  },
   "instagram": {
     "routes": {
       "/:category/:key": {
@@ -32886,7 +33079,7 @@
           "nczitzk"
         ],
         "url": "javdb.com/",
-        "description": "| 全部 | 可播放 | 單體作品 | 可下載 | 含字幕 |\n  | ---- | ------ | -------- | ------ | ------ |\n  |      | p      | s        | d      | c      |\n\n  所有演员编号参见 [演員庫](https://javdb.com/actors)",
+        "description": "| 全部 | 可播放 | 單體作品 | 可下載 | 含字幕 |\n  | ---- | ------ | -------- | ------ | ------ |\n  |      | p      | s        | d      | c      |\n\n  所有演员编号参见 [演員庫](https://javdb.com/actors)\n\n  可用 addon_tags 参数添加额外的过滤 tag，可从网页 url 中获取，例如 `/javdb/actors/R2Vg?addon_tags=212,18` 可筛选 `VR` 和 `中出`。",
         "location": "actors.ts"
       },
       "/home/:category?/:sort?/:filter?": {
@@ -34467,6 +34660,36 @@
         ],
         "location": "column.ts"
       },
+      "/dynamic/:id": {
+        "path": "/dynamic/:id",
+        "categories": [
+          "programming"
+        ],
+        "example": "/juejin/dynamic/3051900006845944",
+        "parameters": {
+          "id": "用户 id, 可在用户页 URL 中找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "juejin.cn/user/:id"
+            ]
+          }
+        ],
+        "name": "用户动态",
+        "maintainers": [
+          "CaoMeiYouRen"
+        ],
+        "location": "dynamic.ts"
+      },
       "/collections/:userId": {
         "path": "/collections/:userId",
         "categories": [
@@ -35147,6 +35370,20 @@
           "game"
         ],
         "example": "/keylol/f161-1",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "KEYLOL_COOKIE",
+              "optional": true,
+              "description": "配置后可抓取具有阅读权限的帖子內容"
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "radar": [
           {
             "source": [
@@ -35374,6 +35611,36 @@
     },
     "name": "Kun Cheng",
     "url": "kunchengblog.com"
+  },
+  "kurogames": {
+    "routes": {
+      "/wutheringwaves/news": {
+        "path": "/wutheringwaves/news",
+        "categories": [
+          "game"
+        ],
+        "example": "/kurogames/wutheringwaves/news",
+        "name": "鸣潮 — 游戏公告、新闻与活动",
+        "radar": [
+          {
+            "source": [
+              "mc.kurogames.com/m/main/news",
+              "mc.kurogames.com/main"
+            ]
+          }
+        ],
+        "maintainers": [
+          "enpitsulin"
+        ],
+        "description": "",
+        "location": "wutheringwaves/news.ts"
+      }
+    },
+    "name": "库洛游戏",
+    "url": "www.kurogames.com",
+    "categories": [
+      "game"
+    ]
   },
   "kuwaitlocal": {
     "routes": {
@@ -37906,6 +38173,36 @@
     },
     "name": "麦肯锡",
     "url": "mckinsey.com.cn"
+  },
+  "mcmod": {
+    "routes": {
+      "/:type": {
+        "path": "/:type",
+        "categories": [
+          "game"
+        ],
+        "example": "/mcmod/new",
+        "parameters": {
+          "type": "查询类型，详见下表"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "最新MOD",
+        "maintainers": [
+          "hualiong"
+        ],
+        "description": "`:type` 类型可选如下\n\n| 随机显示MOD | 最新收录MOD | 最近编辑MOD |\n| ------ | --- | ---- |\n| random | new | edit |",
+        "location": "index.ts"
+      }
+    },
+    "name": "MC百科",
+    "url": "www.mcmod.cn"
   },
   "mdpi": {
     "routes": {
@@ -47255,8 +47552,8 @@
         ],
         "location": "ranking.ts"
       },
-      "/search/:keyword/:order?/:mode?": {
-        "path": "/search/:keyword/:order?/:mode?",
+      "/search/:keyword/:order?/:mode?/:include_ai?": {
+        "path": "/search/:keyword/:order?/:mode?/:include_ai?",
         "categories": [
           "social-media",
           "popular"
@@ -47294,6 +47591,20 @@
               {
                 "label": "no filter",
                 "value": "no"
+              }
+            ]
+          },
+          "include_ai": {
+            "description": "whether AI-generated content is included",
+            "default": "yes",
+            "options": [
+              {
+                "label": "does not include AI-generated content",
+                "value": "no"
+              },
+              {
+                "label": "include AI-generated content",
+                "value": "yes"
               }
             ]
           }
@@ -53735,7 +54046,7 @@
           "gumibea",
           "TeamSUEP"
         ],
-        "description": "类型名称与默认 ID：\n\n  学院一览：\n\n  | 能源与机械工程学院 | 环境与化学工程学院 | 电气工程学院 | 自动化工程学院 | 计算机科学与技术学院 | 电子与信息工程学院 | 经济与管理学院 | 数理学院 | 外国语学院 | 体育学院 | 马克思主义学院 | 人文艺术学院 | 继续教育学院（国际教育学院） |\n  | ------------------ | ------------------ | ------------ | -------------- | -------------------- | ------------------ | -------------- | -------- | ---------- | -------- | -------------- | ------------ | ---------------------------- |\n  | energy             | hhxy               | dqxy         | zdhxy          | jsjxy                | dxxy               | jgxy           | slxy     | wgyxy      | tyb      | skb            | rwysxy       | jjxy                         |\n  | 892                | 5559               | 2462         | 2002           | xygg                 | tzgg               | 3633           | 2063     | tzgg       | 2891     | 1736           | 3089         | 2582                         |\n\n  党群部门：\n\n  | 党委办公室 | 组织部（老干部处、党校） | 党建服务中心 / 党建督查室 | 宣传部（文明办、融媒体中心） | 统战部 | 机关党委 | 纪委（监察专员办公室） | 巡查办    | 武装部 | 学生工作部 | 团委 | 工会（妇工委） | 教师工作部 | 离退休党委 | 研究生工作部 |\n  | ---------- | ------------------------ | ------------------------- | ---------------------------- | ------ | -------- | ---------------------- | --------- | ------ | ---------- | ---- | -------------- | ---------- | ---------- | ------------ |\n  | dangban    | zzb                      | djfwzxdcs                 | xcb                          | tzb    | jgdw     | jijian                 | xunchaban | bwc    | xsc        | tw   | gonghui        | rsc        | tgb        | yjsc         |\n  | 4014       | 1534                     | tzgg                      | 2925                         | 3858   | 3205     | 59                     | 5044      | tzgg   | 3482       | 2092 | 1806           | 1695       | notice     | 1161         |\n\n  行政部门：\n\n  | 校长办公室（档案馆） | 对外联络处 | 发展规划处 | 审计处 | 保卫处 | 学生处 | 人事处 | 退管办 | 国际交流与合作处（港澳台办公室） | 科研处 / 融合办 | 教务处 | 研究生院 | 后勤管理处（后勤服务中心） | 实验室与资产管理处 | 基建处 | 临港新校区建设综合办公室 | 图书馆  | 现代教育技术中心 / 信息办 | 创新创业工程训练中心 | 资产经营公司 / 产业办 | 能源电力科创中心 | 技术转移中心 |\n  | -------------------- | ---------- | ---------- | ------ | ------ | ------ | ------ | ------ | -------------------------------- | --------------- | ------ | -------- | -------------------------- | ------------------ | ------ | ------------------------ | ------- | ------------------------- | -------------------- | --------------------- | ---------------- | ------------ |\n  | office               | dwllc      | fzghc      | sjc    | bwc    | xsc    | rsc    | tgb    | fao                              | kyc             | jwc    | yjsc     | hqglc                      | sysyzcglc          | jjc    | lgxq                     | library | metc                      | ieetc                | cyb                   | kczx             | jszyzx       |\n  | 389                  | 2649       | 291        | 199    | tzgg   | 3482   | 1695   | notice | tzgg                             | 834             | 227    | 1161     | 1616                       | 312                | 327    | 377                      | 4866    | tzgg                      | cxcy                 | 367                   | 3946             | 4247         |\n\n  其它：\n\n  | 新闻网 | Shanghai University of Electric Power | 信息公开网 | 本科招生网 | 本科就业信息网 | 妇工委 | 文明办  | 学习路上 | 上海热交换系统节能工程技术研究中心 | 上海新能源人才技术教育交流中心 | 上海绿色能源并网技术研究中心 | 能源化学实验教学中心 | 教师教学发展中心 | 电力装备设计与制造虚拟仿真中心 | 上海市电力材料防护与新材料重点实验室 | 能源电力智库 | 国家新能源电力系统实验教学示范中心 | 智能发电实验教学中心 |\n  | ------ | ------------------------------------- | ---------- | ---------- | -------------- | ------ | ------- | -------- | ---------------------------------- | ------------------------------ | ---------------------------- | -------------------- | ---------------- | ------------------------------ | ------------------------------------ | ------------ | ---------------------------------- | -------------------- |\n  | news   | english                               | xxgk       | zs         | career         | fgw    | wenming | ztjy     | energy-saving                      | gec                            | green-energy                 | hhsyzx               | jsjxfzzx         | jxfz                           | mpep                                 | nydlzk       | rpstec                             | spgc                 |\n  | notice | events                                | zxgkxx     | zxxx       | tzgg           | 1411   | 2202    | 5575     | tzgg                               | 1959                           | 118                          | 3709                 | 3909             | 3330                           | 1134                                 | tzgg         | 1366                               | 4449                 |\n\n  参数与来源页面对应规则为：`https://${type}.shiep.edu.cn/${id}/list.htm`",
+        "description": "类型名称与默认 ID：\n\n  学院一览：\n\n  | 能源与机械工程学院 | 环境与化学工程学院 | 电气工程学院 | 自动化工程学院 | 计算机科学与技术学院 | 电子与信息工程学院 | 经济与管理学院 | 数理学院 | 外国语学院 | 体育学院 | 马克思主义学院 | 人文艺术学院 | 继续教育学院（国际教育学院） | 海上风电研究院 |\n  | ------------------ | ------------------ | ------------ | -------------- | -------------------- | ------------------ | -------------- | -------- | ---------- | -------- | -------------- | ------------ | ---------------------------- | -------------- |\n  | energy             | hhxy               | dqxy         | zdhxy          | jsjxy                | dxxy               | jgxy           | slxy     | wgyxy      | tyb      | skb            | rwysxy       | jjxy                         | hsfdyjy        |\n  | 892                | 5559               | 2462         | 2002           | xygg                 | tzgg               | 3633           | 2063     | tzgg       | 2891     | 1736           | 3089         | 2582                         | 5748           |\n\n  党群部门：\n\n  | 党委办公室 | 组织部（老干部处、党校） | 党建服务中心 / 党建督查室 | 宣传部（文明办、融媒体中心） | 统战部 | 机关党委 | 纪委（监察专员办公室） | 巡查办    | 武装部 | 学生工作部 | 团委 | 工会（妇工委） | 教师工作部 | 离退休党委 | 研究生工作部 |\n  | ---------- | ------------------------ | ------------------------- | ---------------------------- | ------ | -------- | ---------------------- | --------- | ------ | ---------- | ---- | -------------- | ---------- | ---------- | ------------ |\n  | dangban    | zzb                      | djfwzxdcs                 | xcb                          | tzb    | jgdw     | jijian                 | xunchaban | bwc    | xsc        | tw   | gonghui        | rsc        | tgb        | yjsc         |\n  | 4013       | 1534                     | tzgg                      | 2925                         | 3858   | 3205     | 59                     | 5044      | tzgg   | 3482       | 2092 | 1806           | 1695       | notice     | 1161         |\n\n  行政部门：\n\n  | 校长办公室（档案馆） | 对外联络处 | 发展规划处 | 审计处 | 保卫处 | 学生处 | 人事处 | 退管办 | 国际交流与合作处（港澳台办公室） | 科研处 / 融合办 | 教务处 | 研究生院 | 后勤管理处（后勤服务中心） | 实验室与资产管理处 | 基建处 | 临港新校区建设综合办公室 | 图书馆  | 现代教育技术中心 / 信息办 | 创新创业工程训练中心 | 资产经营公司 / 产业办 | 能源电力科创中心 | 技术转移中心 |\n  | -------------------- | ---------- | ---------- | ------ | ------ | ------ | ------ | ------ | -------------------------------- | --------------- | ------ | -------- | -------------------------- | ------------------ | ------ | ------------------------ | ------- | ------------------------- | -------------------- | --------------------- | ---------------- | ------------ |\n  | office               | dwllc      | fzghc      | sjc    | bwc    | xsc    | rsc    | tgb    | fao                              | kyc             | jwc    | yjsc     | hqglc                      | sysyzcglc          | jjc    | lgxq                     | library | metc                      | ieetc                | cyb                   | kczx             | jszyzx       |\n  | 389                  | 2649       | 291        | 199    | tzgg   | 3482   | 1695   | notice | tzgg                             | 834             | 227    | 1161     | 1616                       | 312                | 327    | 377                      | 4866    | tzgg                      | cxcy                 | 367                   | 3946             | 4247         |\n\n  其它：\n\n  | 新闻网 | 信息公开网 | 本科招生网 | 本科就业信息网 | 文明办  | 学习路上 | “学条例 守党纪”专题网 | 上海新能源人才技术教育交流中心 | 上海绿色能源并网技术研究中心 | 能源电力智库 | 智能发电实验教学中心 |\n  | ------ | ---------- | ---------- | -------------- | ------- | -------- | --------------------- | ------------------------------ | ---------------------------- | ------------ | -------------------- |\n  | news   | xxgk       | zs         | career         | wenming | ztjy     | xxjy                  | gec                            | green-energy                 | nydlzk       | spgc                 |\n  | notice | zxgkxx     | zxxx       | tzgg           | 2202    | 5575     | 5973                  | 1959                           | 118                          | tzgg         | 4449                 |\n\n  参数与来源页面对应规则为：`https://${type}.shiep.edu.cn/${id}/list.htm`",
         "location": "index.ts"
       }
     },
@@ -56076,7 +56387,8 @@
         "name": "Journal",
         "maintainers": [
           "Derekmini",
-          "TonyRL"
+          "TonyRL",
+          "xiahaoyun"
         ],
         "location": "journal.ts"
       }
@@ -61453,7 +61765,8 @@
         },
         "name": "Home timeline",
         "maintainers": [
-          "DIYgod"
+          "DIYgod",
+          "CaoMeiYouRen"
         ],
         "radar": [
           {
@@ -61738,7 +62051,8 @@
         "maintainers": [
           "DIYgod",
           "yindaheng98",
-          "Rongronggg9"
+          "Rongronggg9",
+          "CaoMeiYouRen"
         ],
         "radar": [
           {
@@ -63726,6 +64040,29 @@
           "WhiteWorld"
         ],
         "location": "topics.ts"
+      },
+      "/xna": {
+        "path": "/xna",
+        "categories": [
+          "bbs",
+          "blog"
+        ],
+        "view": 0,
+        "example": "/v2ex/xna",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "XNA",
+        "maintainers": [
+          "luckyscript"
+        ],
+        "location": "xna.ts"
       }
     },
     "name": "V2EX",
@@ -67861,6 +68198,41 @@
         },
         "location": "news/index.ts"
       },
+      "/news/list/:region/:listId": {
+        "path": "/news/list/:region/:listId",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/yahoo/news/list/hk/09fcf7b0-0ab2-11e8-bf1f-4d52d4f79454",
+        "parameters": {
+          "region": "`hk`, `tw`",
+          "listId": "見下表"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "hk.news.yahoo.com/",
+              "tw.news.yahoo.com/"
+            ]
+          }
+        ],
+        "name": "合作媒體",
+        "maintainers": [
+          "TonyRL",
+          "williamgateszhao",
+          "tpnonthealps"
+        ],
+        "description": "\n| 合作媒體 (`HK`) | `:listId`                              |\n| ----------------- | ---------------------------------------- |\n| 東方日報          | `33ddd580-0ab3-11e8-bfe1-4b555fb1e429` |\n| now.com           | `01b4d760-0ab4-11e8-af3a-54037d3dced3` |\n| am730             | `c4842090-0ab2-11e8-af7f-041a72ce7398` |\n| BBC               | `4d3fc9a0-fac8-11e9-87f2-564ca250983e` |\n| 信報財經新聞      | `5a8a0aa0-0ab3-11e8-b3dc-d990c79d6cb1` |\n| 香港電台          | `b4bfc2d0-0ab3-11e8-bf9f-c888fc09923f` |\n| 法新社            | `1cc44280-facb-11e9-ad7c-f3ba971275c8` |\n| Bloomberg         | `40023670-facc-11e9-9dde-9175ff306602` |\n| 香港動物報        | `6058fa9c-d74d-487a-8b49-aa99a2a2978e` |",
+        "location": "news/listid.ts"
+      },
       "/news/providers/:region/list": {
         "path": "/news/providers/:region/list",
         "categories": [
@@ -70424,7 +70796,8 @@
       }
     },
     "name": "知乎",
-    "url": "www.zhihu.com"
+    "url": "www.zhihu.com",
+    "description": ":::tip\n自2024年7月，未登录状态下大部分路由[无法获取全文](https://github.com/DIYgod/RSSHub/issues/16260)。若有需要请在登陆知乎后寻找并添加包含`z_c0`的Cookies至环境变量`ZHIHU_COOKIES`。\n:::"
   },
   "zhitongcaijing": {
     "routes": {
