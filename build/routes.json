@@ -26831,7 +26831,7 @@
         "maintainers": [
           "HaoyuLee"
         ],
-        "description": "\n        | 公告类别         | colId |\n        | ------------ | -- |\n        | 首页-市属国企招聘信息-招聘公告     | 1229116730  |\n    ",
+        "description": "\n    | 公告类别         | colId |\n    | ------------ | -- |\n    | 首页-市属国企招聘信息-招聘公告     | 1229116730  |\n    ",
         "location": "zj/ningbogzw-notice.ts"
       },
       "/zj/ningborsjnotice/:colId?": {
@@ -26856,7 +26856,7 @@
         "maintainers": [
           "HaoyuLee"
         ],
-        "description": "\n        | 公告类别         | colId |\n        | ------------ | -- |\n        | 事业单位进人公告     | 1229676740  |\n    ",
+        "description": "\n    | 公告类别         | colId |\n    | ------------ | -- |\n    | 事业单位进人公告     | 1229676740  |\n    ",
         "location": "zj/ningborsjnotice.ts"
       },
       "/zj/search/:websiteid?/:word/:cateid?": {
