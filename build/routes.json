@@ -26846,7 +26846,7 @@
         "radar": [
           {
             "source": [
-              "http://rsj.ningbo.gov.cn"
+              "rsj.ningbo.gov.cn/col/col1229676740/index.html"
             ],
             "target": "/zj/ningborsjnotice/:colId?"
           }
