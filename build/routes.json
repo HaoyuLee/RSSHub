@@ -26821,7 +26821,7 @@
         "radar": [
           {
             "source": [
-              "http://gzw.ningbo.gov.cn"
+              "gzw.ningbo.gov.cn/col/col1229116730/index.html"
             ],
             "target": "/zj/ningbogzw-notice/:colId?"
           }
