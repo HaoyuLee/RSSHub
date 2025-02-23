@@ -15523,6 +15523,19 @@
       }
     ]
   },
+  "tjftz.gov.cn": {
+    "_name": "上海市人民政府",
+    ".": [
+      {
+        "title": "天津港保税区-公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/channels/:channelId.html"
+        ],
+        "target": "/gov/tianjin/tjftz-notice/:channelId"
+      }
+    ]
+  },
   "wuhan.gov.cn": {
     "_name": "上海市人民政府",
     ".": [
