@@ -39789,6 +39789,30 @@
         "description": "\n| 公告类别         | channelId |\n| ------------ | -- |\n| 首页>新闻>保税区要闻>区域聚焦     | 6302  |\n    ",
         "location": "tianjin/tjftz.ts"
       },
+      "/tianjin/tjrcgzw-notice/:cate/:subCate": {
+        "path": "/tianjin/tjrcgzw-notice/:cate/:subCate",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/tianjin/tjrcgzw-notice/rczc/sjrczc/",
+        "parameters": {
+          "channelId": "公告分类id、详细信息点击源网站https://hrss.tj.gov.cn/ztzl/ztzl1/tjrcgzw/请求中寻找"
+        },
+        "radar": [
+          {
+            "source": [
+              "https://hrss.tj.gov.cn/ztzl/ztzl1/tjrcgzw/"
+            ],
+            "target": "/tianjin/tjrcgzw-notice/:cate/:subCate"
+          }
+        ],
+        "name": "天津人才工作网-公告",
+        "url": "https://hrss.tj.gov.cn/ztzl/ztzl1/tjrcgzw/",
+        "maintainers": [
+          "HaoyuLee"
+        ],
+        "location": "tianjin/tjrcgzw.ts"
+      },
       "/wuhan/sy/whyw": {
         "path": "/wuhan/sy/whyw",
         "categories": [
