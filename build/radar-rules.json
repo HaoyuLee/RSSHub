@@ -15536,6 +15536,19 @@
       }
     ]
   },
+  "tj.gov.cn": {
+    "_name": "上海市人民政府",
+    "hrss": [
+      {
+        "title": "天津人才工作网-公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/ztzl/ztzl1/tjrcgzw/"
+        ],
+        "target": "/gov/tianjin/tjrcgzw-notice/:cate/:subCate"
+      }
+    ]
+  },
   "wuhan.gov.cn": {
     "_name": "上海市人民政府",
     ".": [
