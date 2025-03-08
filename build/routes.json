@@ -8255,7 +8255,8 @@
         "radar": [
           {
             "source": [
-              "anthropic.com"
+              "www.anthropic.com/news",
+              "www.anthropic.com"
             ]
           }
         ],
@@ -8263,7 +8264,7 @@
         "maintainers": [
           "etShaw-zh"
         ],
-        "url": "anthropic.com/news",
+        "url": "www.anthropic.com/news",
         "location": "news.ts"
       }
     },
@@ -9210,6 +9211,62 @@
     },
     "name": "ArtStation",
     "url": "www.artstation.com",
+    "lang": "en"
+  },
+  "asianfanfics": {
+    "routes": {
+      "/tag/:tag/:type": {
+        "path": "/tag/:tag/:type",
+        "categories": [
+          "reading"
+        ],
+        "example": "/asianfanfics/tag/milklove/N",
+        "parameters": {
+          "tag": "标签",
+          "type": "排序类型"
+        },
+        "name": "标签",
+        "maintainers": [
+          "KazooTTT"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.asianfanfics.com/browse/tag/:tag/:type"
+            ],
+            "target": "/tag/:tag/:type"
+          }
+        ],
+        "description": "匹配asianfanfics标签，支持排序类型：\n- L: Latest 最近更新\n- N: Newest 最近发布\n- O: Oldest 最早发布\n- C: Completed 已完成\n- OS: One Shots 短篇\n",
+        "location": "tag.ts"
+      },
+      "/text-search/:keyword": {
+        "path": "/text-search/:keyword",
+        "categories": [
+          "reading"
+        ],
+        "example": "/asianfanfics/text-search/milklove",
+        "parameters": {
+          "keyword": "关键词"
+        },
+        "name": "关键词",
+        "maintainers": [
+          "KazooTTT"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.asianfanfics.com/browse/text_search?q=:keyword"
+            ],
+            "target": "/text-search/:keyword"
+          }
+        ],
+        "description": "匹配asianfanfics搜索关键词",
+        "location": "text-search.ts"
+      }
+    },
+    "name": "Asianfanfics",
+    "url": "asianfanfics.com",
     "lang": "en"
   },
   "asiantolick": {
@@ -13297,6 +13354,43 @@
     },
     "name": "Blizzard",
     "url": "news.blizzard.com",
+    "lang": "en"
+  },
+  "blockworks": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "finance"
+        ],
+        "example": "/blockworks",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "blockworks.co/"
+            ],
+            "target": "/"
+          }
+        ],
+        "name": "News",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "description": "Blockworks news with full text support.",
+        "location": "index.ts"
+      }
+    },
+    "name": "Blockworks",
+    "url": "blockworks.co",
     "lang": "en"
   },
   "blogread": {
@@ -19989,6 +20083,34 @@
     "url": "lock.cmpxchg8b.com",
     "lang": "en"
   },
+  "cmu": {
+    "routes": {
+      "/andypavlo/blog": {
+        "path": "/andypavlo/blog",
+        "categories": [
+          "blog"
+        ],
+        "example": "/cmu/andypavlo/blog",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Andy Pavlo Blog",
+        "maintainers": [
+          "mocusez"
+        ],
+        "location": "andypavlo/blog.ts"
+      }
+    },
+    "name": "Carnegie Mellon University",
+    "url": "www.cmu.edu",
+    "lang": "en"
+  },
   "cn-healthcare": {
     "routes": {
       "/index": {
@@ -21000,11 +21122,79 @@
           "jameshih"
         ],
         "url": "coindesk.com/",
+        "location": "consensus-magazine.ts"
+      },
+      "/news": {
+        "path": "/news",
+        "categories": [
+          "finance"
+        ],
+        "example": "/coindesk/news",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "News",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "radar": [
+          {
+            "source": [
+              "coindesk.com/"
+            ],
+            "target": "/news"
+          }
+        ],
+        "description": "Get latest news from CoinDesk with full text.",
+        "location": "news.ts"
+      }
+    },
+    "name": "CoinDesk",
+    "url": "coindesk.com",
+    "lang": "en",
+    "description": "CoinDesk is a news site specializing in bitcoin and digital currencies, delivering news, analysis, and information about the blockchain ecosystem."
+  },
+  "cointelegraph": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "finance"
+        ],
+        "example": "/cointelegraph",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "News",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "radar": [
+          {
+            "source": [
+              "cointelegraph.com/"
+            ],
+            "target": "/"
+          }
+        ],
+        "description": "Get latest news from Cointelegraph with full text.",
         "location": "index.ts"
       }
     },
-    "name": "CoinDesk Consensus Magazine",
-    "url": "coindesk.com",
+    "name": "Cointelegraph",
+    "url": "cointelegraph.com",
     "lang": "en"
   },
   "colamanga": {
@@ -21047,6 +21237,83 @@
       "name": "可乐漫画"
     },
     "lang": "zh-CN"
+  },
+  "collabo-cafe": {
+    "routes": {
+      "/category/:category": {
+        "path": "/category/:category",
+        "categories": [
+          "anime"
+        ],
+        "example": "/collabo-cafe/category/cafe",
+        "parameters": {
+          "category": "Category, refer to the original website (ジャンル別)"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "分类",
+        "maintainers": [
+          "cokemine"
+        ],
+        "location": "category.ts"
+      },
+      "/": {
+        "path": "/",
+        "categories": [
+          "anime"
+        ],
+        "example": "/collabo-cafe/",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "全部文章",
+        "maintainers": [
+          "cokemine"
+        ],
+        "location": "index.ts"
+      },
+      "/tag/:tag": {
+        "path": "/tag/:tag",
+        "categories": [
+          "anime"
+        ],
+        "example": "/collabo-cafe/tag/ikebukuro",
+        "parameters": {
+          "tag": "Tag, refer to the original website (開催地域別)"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "标签",
+        "maintainers": [
+          "cokemine"
+        ],
+        "location": "tag.ts"
+      }
+    },
+    "name": "コラボカフェ",
+    "url": "collabo-cafe.com",
+    "description": "コラボカフェ - アニメ・漫画・ゲームのコラボ情報一覧まとめ",
+    "lang": "ja",
+    "categories": [
+      "anime"
+    ]
   },
   "comicat": {
     "routes": {
@@ -22248,6 +22515,43 @@
     },
     "name": "Crossbell",
     "url": "crossbell.io",
+    "lang": "en"
+  },
+  "cryptoslate": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "finance"
+        ],
+        "example": "/cryptoslate",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "News",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "radar": [
+          {
+            "source": [
+              "cryptoslate.com/"
+            ],
+            "target": "/"
+          }
+        ],
+        "description": "Get latest news from CryptoSlate.",
+        "location": "index.ts"
+      }
+    },
+    "name": "CryptoSlate",
+    "url": "cryptoslate.com",
     "lang": "en"
   },
   "cs": {
@@ -24122,6 +24426,43 @@
     },
     "name": "DealStreetAsia",
     "url": "dealstreetasia.com",
+    "lang": "en"
+  },
+  "decrypt": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "finance"
+        ],
+        "example": "/decrypt",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "News",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "radar": [
+          {
+            "source": [
+              "decrypt.co/"
+            ],
+            "target": "/"
+          }
+        ],
+        "description": "Get latest news from Decrypt.",
+        "location": "index.ts"
+      }
+    },
+    "name": "Decrypt",
+    "url": "decrypt.co",
     "lang": "en"
   },
   "dedao": {
@@ -29360,6 +29701,88 @@
     "url": "www.fanbox.cc",
     "lang": "zh-CN"
   },
+  "fangchan": {
+    "routes": {
+      "/list/:id?": {
+        "path": "/list/:id?",
+        "name": "列表",
+        "url": "www.fangchan.com",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/fangchan/list/datalist",
+        "parameters": {
+          "id": {
+            "description": "分类，默认为 `datalist`，即数据研究，可在对应分类页 URL 中找到",
+            "options": [
+              {
+                "label": "数据研究",
+                "value": "datalist"
+              },
+              {
+                "label": "行业测评",
+                "value": "industrylist"
+              },
+              {
+                "label": "政策法规",
+                "value": "policylist"
+              }
+            ]
+          }
+        },
+        "description": ":::tip\n若订阅 [列表](https://www.fangchan.com/)，网址为 `https://www.fangchan.com/`，请截取 `https://www.fangchan.com/` 到末尾 `.html` 的部分 `datalist` 作为 `id` 参数填入，此时目标路由为 [`/fangchan/datalist`](https://rsshub.app/fangchan/datalist)。\n:::\n\n| [数据研究](https://www.fangchan.com/datalist)         | [行业测评](https://www.fangchan.com/industrylist)             | [政策法规](https://www.fangchan.com/policylist)           |\n| ----------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------- |\n| [datalist](https://rsshub.app/fangchan/list/datalist) | [industrylist](https://rsshub.app/fangchan/list/industrylist) | [policylist](https://rsshub.app/fangchan/list/policylist) |\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.fangchan.com/:id"
+            ]
+          },
+          {
+            "title": "数据研究",
+            "source": [
+              "www.fangchan.com/datalist"
+            ],
+            "target": "/list/datalist"
+          },
+          {
+            "title": "行业测评",
+            "source": [
+              "www.fangchan.com/industrylist"
+            ],
+            "target": "/list/industrylist"
+          },
+          {
+            "title": "政策法规",
+            "source": [
+              "www.fangchan.com/policylist"
+            ],
+            "target": "/list/policylist"
+          }
+        ],
+        "view": 0,
+        "location": "list.ts"
+      }
+    },
+    "name": "中房网",
+    "url": "fangchan.com",
+    "categories": [
+      "new-media"
+    ],
+    "description": "",
+    "lang": "zh-CN"
+  },
   "fanqienovel": {
     "routes": {
       "/page/:bookId": {
@@ -31206,6 +31629,34 @@
     "lang": "zh-CN",
     "description": "FoodTalks全球食品资讯网是一个提供食品饮料行业新闻、资讯、分析和商业资源的领先在线平台。它涵盖行业趋势、市场动态、产品创新、投融资信息以及企业新闻，连接行业内的专业人士、企业和消费者。"
   },
+  "foreignaffairs": {
+    "routes": {
+      "/rss": {
+        "path": "/rss",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/foreignaffairs/rss",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "RSS",
+        "maintainers": [
+          "dzx-dzx"
+        ],
+        "location": "rss.ts"
+      }
+    },
+    "name": "Foreign Affairs",
+    "url": "www.foreignaffairs.com",
+    "lang": "en"
+  },
   "foresightnews": {
     "routes": {
       "/article": {
@@ -31365,6 +31816,34 @@
     "name": "十年之约",
     "url": "www.foreverblog.cn",
     "lang": "zh-CN"
+  },
+  "forklog": {
+    "routes": {
+      "/news": {
+        "path": "/news",
+        "categories": [
+          "finance"
+        ],
+        "example": "/forklog/news",
+        "radar": [
+          {
+            "source": [
+              "forklog.com/news"
+            ],
+            "target": "/news"
+          }
+        ],
+        "name": "Новости",
+        "maintainers": [
+          "raven428"
+        ],
+        "url": "forklog.com/news",
+        "location": "index.ts"
+      }
+    },
+    "name": "Forklog",
+    "url": "forklog.com",
+    "lang": "ru"
   },
   "fortnite": {
     "routes": {
@@ -37790,6 +38269,99 @@
         "maintainers": [],
         "location": "mmht/mmht.ts"
       },
+      "/moa/gjs/:category{.+}?": {
+        "path": "/moa/gjs/:category{.+}?",
+        "name": "中华人民共和国农业农村部国际合作司",
+        "url": "www.gjs.moa.gov.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/gov/moa/gjs/gzdt",
+        "parameters": {
+          "category": {
+            "description": "分类，默认为 `gzdt`，即工作动态，可在对应分类页 URL 中找到",
+            "options": [
+              {
+                "label": "工作动态",
+                "value": "gzdt"
+              },
+              {
+                "label": "通知公告",
+                "value": "tzgg"
+              },
+              {
+                "label": "“一带一路”合作和农业走出去",
+                "value": "ydylhzhhnyzcq"
+              },
+              {
+                "label": "农业国际贸易监测与展望",
+                "value": "ncpmy"
+              },
+              {
+                "label": "多双边合作",
+                "value": "dsbhz"
+              }
+            ]
+          }
+        },
+        "description": ":::tip\n若订阅 [中华人民共和国农业农村部国际合作司工作动态](https://www.gjs.moa.gov.cn/gzdt/)，网址为 `https://www.gjs.moa.gov.cn/gzdt/`，请截取 `https://www.gjs.moa.gov.cn/` 到末尾 `/` 的部分 `gzdt` 作为 `category` 参数填入，此时目标路由为 [`/gov/moa/gjs/gzdt`](https://rsshub.app/gov/moa/gjs/gzdt)。\n:::\n\n| [工作动态](http://www.gjs.moa.gov.cn/gzdt/) | [通知公告](http://www.gjs.moa.gov.cn/tzgg/) | [“一带一路”合作和农业走出去](http://www.gjs.moa.gov.cn/ydylhzhhnyzcq/) | [农业国际贸易监测与展望](http://www.gjs.moa.gov.cn/ncpmy/) | [多双边合作](http://www.gjs.moa.gov.cn/dsbhz/) |\n| ------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------- |\n| [gzdt](https://rsshub.app/gov/moa/gjs/gzdt) | [tzgg](https://rsshub.app/gov/moa/gjs/tzgg) | [ydylhzhhnyzcq](https://rsshub.app/gov/moa/gjs/ydylhzhhnyzcq)          | [ncpmy](https://rsshub.app/gov/moa/gjs/ncpmy)              | [dsbhz](https://rsshub.app/gov/moa/gjs/dsbhz)  |\n",
+        "categories": [
+          "government"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.gjs.moa.gov.cn/:category{.+}?"
+            ]
+          },
+          {
+            "title": "工作动态",
+            "source": [
+              "www.gjs.moa.gov.cn/gzdt/"
+            ],
+            "target": "/moa/gjs/gzdt"
+          },
+          {
+            "title": "通知公告",
+            "source": [
+              "www.gjs.moa.gov.cn/tzgg/"
+            ],
+            "target": "/moa/gjs/tzgg"
+          },
+          {
+            "title": "“一带一路”合作和农业走出去",
+            "source": [
+              "www.gjs.moa.gov.cn/ydylhzhhnyzcq/"
+            ],
+            "target": "/moa/gjs/ydylhzhhnyzcq"
+          },
+          {
+            "title": "农业国际贸易监测与展望",
+            "source": [
+              "www.gjs.moa.gov.cn/ncpmy/"
+            ],
+            "target": "/moa/gjs/ncpmy"
+          },
+          {
+            "title": "多双边合作",
+            "source": [
+              "www.gjs.moa.gov.cn/dsbhz/"
+            ],
+            "target": "/moa/gjs/dsbhz"
+          }
+        ],
+        "view": 0,
+        "location": "moa/gjs.ts"
+      },
       "/moa/suburl/:suburl{.+}": {
         "path": "/moa/suburl/:suburl{.+}",
         "categories": [
@@ -40189,6 +40761,129 @@
     "name": "GQ",
     "url": "gq.com",
     "lang": "en"
+  },
+  "grainoil": {
+    "routes": {
+      "/:category/:id": {
+        "path": "/:category/:id",
+        "name": "分类",
+        "url": "load.grainoil.com.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/grainoil/newsListHome/3",
+        "parameters": {
+          "category": {
+            "description": "分类，默认为 `newsListHome`，可在对应分类页 URL 中找到",
+            "options": [
+              {
+                "label": "newsListHome",
+                "value": "newsListHome"
+              },
+              {
+                "label": "newsListChannel",
+                "value": "newsListChannel"
+              }
+            ]
+          },
+          "id": {
+            "description": "分类 ID，可在对应分类页 URL 中找到"
+          }
+        },
+        "description": ":::tip\n若订阅 [政务信息](http://load.grainoil.com.cn/newsListHome/1430.jspx)，网址为 `http://load.grainoil.com.cn/newsListHome/1430.jspx`，请截取 `https://load.grainoil.com.cn/` 到末尾 `.jspx` 的部分 `newsListHome/1430` 作为 `category` 和 `id`参数填入，此时目标路由为 [`/grainoil/newsListHome/1430`](https://rsshub.app/grainoil/newsListHome/1430)。\n\n:::\n\n<details>\n  <summary>更多分类</summary>\n\n| 分类     | ID                 |\n| -------- | ------------------ |\n| 政务信息 | newsListHome/1430  |\n| 要闻动态 | newsListHome/3     |\n| 产业经济 | newsListHome/1469  |\n| 产业信息 | newsListHome/1471  |\n| 爱粮节粮 | newsListHome/1470  |\n| 政策法规 | newsListChannel/18 |\n| 生产气象 | newsListChannel/19 |\n| 统计资料 | newsListChannel/20 |\n| 综合信息 | newsListChannel/21 |\n\n</details>\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "load.grainoil.com.cn/:category/:id"
+            ]
+          },
+          {
+            "title": "政务信息",
+            "source": [
+              "load.grainoil.com.cn/newsListHome/1430.jspx"
+            ],
+            "target": "/newsListHome/1430"
+          },
+          {
+            "title": "要闻动态",
+            "source": [
+              "load.grainoil.com.cn/newsListHome/3.jspx"
+            ],
+            "target": "/newsListHome/3"
+          },
+          {
+            "title": "产业经济",
+            "source": [
+              "load.grainoil.com.cn/newsListHome/1469.jspx"
+            ],
+            "target": "/newsListHome/1469"
+          },
+          {
+            "title": "产业信息",
+            "source": [
+              "load.grainoil.com.cn/newsListHome/1471.jspx"
+            ],
+            "target": "/newsListHome/1471"
+          },
+          {
+            "title": "爱粮节粮",
+            "source": [
+              "load.grainoil.com.cn/newsListHome/1470.jspx"
+            ],
+            "target": "/newsListHome/1470"
+          },
+          {
+            "title": "政策法规",
+            "source": [
+              "load.grainoil.com.cn/newsListChannel/18.jspx"
+            ],
+            "target": "/newsListChannel/18"
+          },
+          {
+            "title": "生产气象",
+            "source": [
+              "load.grainoil.com.cn/newsListChannel/19.jspx"
+            ],
+            "target": "/newsListChannel/19"
+          },
+          {
+            "title": "统计资料",
+            "source": [
+              "load.grainoil.com.cn/newsListChannel/20.jspx"
+            ],
+            "target": "/newsListChannel/20"
+          },
+          {
+            "title": "综合信息",
+            "source": [
+              "load.grainoil.com.cn/newsListChannel/21.jspx"
+            ],
+            "target": "/newsListChannel/21"
+          }
+        ],
+        "view": 0,
+        "location": "category.ts"
+      }
+    },
+    "name": "国家粮油信息中心",
+    "url": "load.grainoil.com.cn",
+    "categories": [
+      "new-media"
+    ],
+    "description": "中国粮食信息网",
+    "lang": "zh-CN"
   },
   "greasyfork": {
     "routes": {
@@ -52553,6 +53248,44 @@
     "url": "www.kisskiss.tv",
     "lang": "ja"
   },
+  "komiic": {
+    "routes": {
+      "/comic/:id": {
+        "path": "/comic/:id",
+        "categories": [
+          "anime"
+        ],
+        "example": "/komiic/comic/533",
+        "parameters": {
+          "id": "漫画 ID"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "komiic.com/comic/:id"
+            ],
+            "target": "/comic/:id"
+          }
+        ],
+        "name": "漫画更新",
+        "maintainers": [
+          "NekoAria"
+        ],
+        "location": "comic.ts"
+      }
+    },
+    "name": "Komiic",
+    "url": "komiic.com",
+    "lang": "zh-CN"
+  },
   "konachan": {
     "routes": {
       "/post/popular_recent/:period?": {
@@ -53456,6 +54189,36 @@
     "url": "layoffs.fyi",
     "lang": "en"
   },
+  "leagueoflegends": {
+    "routes": {
+      "/patch-notes": {
+        "path": "/patch-notes",
+        "categories": [
+          "game"
+        ],
+        "example": "/leagueoflegends/patch-notes",
+        "radar": [
+          {
+            "source": [
+              "www.leagueoflegends.com/en-us/news/tags/patch-notes/",
+              "www.leagueoflegends.com/en-us/news/game-updates/:postSlug"
+            ]
+          }
+        ],
+        "name": "Patch Notes",
+        "maintainers": [
+          "noahm"
+        ],
+        "location": "patch-notes.ts"
+      }
+    },
+    "name": "League of Legends",
+    "url": "leagueoflegends.com",
+    "categories": [
+      "game"
+    ],
+    "lang": "en"
+  },
   "learnblockchain": {
     "routes": {
       "/posts/:cid/:sort?": {
@@ -54063,6 +54826,44 @@
     "name": "轻之国度",
     "url": "lightNovel.us",
     "lang": "zh-CN"
+  },
+  "likeshop": {
+    "routes": {
+      "/:site": {
+        "path": "/:site",
+        "categories": [
+          "social-media"
+        ],
+        "example": "/likeshop/bloombergpursuits",
+        "parameters": {
+          "site": "the site attached to likeshop.me/"
+        },
+        "radar": [
+          {
+            "source": [
+              "likeshop.me/"
+            ]
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Posts",
+        "maintainers": [
+          "nickyfoto"
+        ],
+        "description": "LikeShop link in bio takes your audience from Instagram and TikTok to your website in one easy step.",
+        "location": "index.ts"
+      }
+    },
+    "name": "LikeShop",
+    "url": "likeshop.me",
+    "lang": "en"
   },
   "line": {
     "routes": {
@@ -84723,6 +85524,67 @@
         "url": "jiuye.swjtu.edu.cn/career",
         "location": "jyzpxx.ts"
       },
+      "/scai/:type": {
+        "path": "/scai/:type",
+        "categories": [
+          "university"
+        ],
+        "example": "/swjtu/scai/bks",
+        "parameters": {
+          "type": "通知类型"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "scai.swjtu.edu.cn/"
+            ]
+          }
+        ],
+        "name": "计算机与人工智能学院",
+        "description": "\n| 分区              | 参数         |\n| ----------------- | ----------- |\n| 本科生教育         | bks         |\n| 研究生教育         | yjs         |\n| 学生工作           | xsgz        |\n",
+        "maintainers": [
+          "AzureG03",
+          "SuperJeason"
+        ],
+        "location": "scai.ts"
+      },
+      "/sports": {
+        "path": "/sports",
+        "categories": [
+          "university"
+        ],
+        "example": "/swjtu/sports",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "sports.swjtu.edu.cn/"
+            ]
+          }
+        ],
+        "name": "体育学院",
+        "description": "新闻资讯",
+        "maintainers": [
+          "AzureG03"
+        ],
+        "location": "sports.ts"
+      },
       "/xg/:code?": {
         "path": "/xg/:code?",
         "categories": [
@@ -84810,40 +85672,10 @@
         ],
         "description": "#### 研究生通知 {#xi-nan-jiao-tong-da-xue-jiao-tong-yun-shu-yu-wu-liu-xue-yuan-yan-jiu-sheng-tong-zhi}",
         "location": "jtys/yjs.ts"
-      },
-      "/scai/bks": {
-        "path": "/scai/bks",
-        "categories": [
-          "university"
-        ],
-        "example": "/swjtu/scai/bks",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": true,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "scai.swjtu.edu.cn/"
-            ]
-          }
-        ],
-        "name": "计算机与人工智能学院",
-        "description": "本科生教育",
-        "maintainers": [
-          "AzureG03",
-          "SuperJeason"
-        ],
-        "location": "scai/bks.ts"
       }
     },
     "name": "西南交通大学",
-    "url": "ctt.swjtu.edu.cn",
+    "url": "www.swjtu.edu.cn",
     "lang": "zh-CN"
   },
   "swpu": {
@@ -90012,6 +90844,45 @@
     "url": "www.theatlantic.com",
     "lang": "en"
   },
+  "theblock": {
+    "routes": {
+      "/category/:category": {
+        "path": "/category/:category",
+        "categories": [
+          "finance"
+        ],
+        "example": "/theblock/category/crypto-ecosystems",
+        "parameters": {
+          "category": "News category"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Category",
+        "maintainers": [
+          "pseudoyu"
+        ],
+        "radar": [
+          {
+            "source": [
+              "theblock.co/category/:category"
+            ],
+            "target": "/category/:category"
+          }
+        ],
+        "description": "Get latest news from TheBlock by category. Note that due to website limitations, only article summaries may be available.",
+        "location": "index.ts"
+      }
+    },
+    "name": "TheBlock",
+    "url": "theblock.co",
+    "lang": "en"
+  },
   "theblockbeats": {
     "routes": {
       "/:channel?/:original?": {
@@ -90787,7 +91658,7 @@
             ]
           }
         ],
-        "name": "The Verge",
+        "name": "Category",
         "maintainers": [
           "HenryQW",
           "vbali"
@@ -90870,7 +91741,7 @@
         "parameters": {
           "user": "Username",
           "routeParams": {
-            "description": "Extra parameters, see the table below\nSpecify options (in the format of query string) in parameter `routeParams` to control some extra features for threads\n\n| Key                            | Description                                                                                                                  | Accepts                | Defaults to |\n| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------- |\n| `showAuthorInTitle`            | Show author name in title                                                                                                    | `0`/`1`/`true`/`false` | `true`      |\n| `showAuthorInDesc`             | Show author name in description (RSS body)                                                                                   | `0`/`1`/`true`/`false` | `true`      |\n| `showQuotedAuthorAvatarInDesc` | Show avatar of quoted author in description (RSS body) (Not recommended if your RSS reader extracts images from description) | `0`/`1`/`true`/`false` | `false`     |\n| `showAuthorAvatarInDesc`       | Show avatar of author in description (RSS body) (Not recommended if your RSS reader extracts images from description)        | `0`/`1`/`true`/`false` | `falseP`    |\n| `showEmojiForQuotesAndReply`   | Use \"🔁\" instead of \"QT\", \"↩️\" instead of \"Re\"                                                                               | `0`/`1`/`true`/`false` | `true`      |\n| `showQuotedInTitle`            | Show quoted tweet in title                                                                                                   | `0`/`1`/`true`/`false` | `true`      |\n| `replies`                      | Show replies                                                                                                                 | `0`/`1`/`true`/`false` | `true`      |\n\nSpecify different option values than default values to improve readability. The URL\n\n```\nhttps://rsshub.app/threads/zuck/showAuthorInTitle=1&showAuthorInDesc=1&showQuotedAuthorAvatarInDesc=1&showAuthorAvatarInDesc=1&showEmojiForQuotesAndReply=1&showQuotedInTitle=1\n```"
+            "description": "Extra parameters, see the table below\nSpecify options (in the format of query string) in parameter `routeParams` to control some extra features for threads\n\n| Key                            | Description                                                                                                                  | Accepts                | Defaults to |\n| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------- |\n| `showAuthorInTitle`            | Show author name in title                                                                                                    | `0`/`1`/`true`/`false` | `true`      |\n| `showAuthorInDesc`             | Show author name in description (RSS body)                                                                                   | `0`/`1`/`true`/`false` | `true`      |\n| `showQuotedAuthorAvatarInDesc` | Show avatar of quoted author in description (RSS body) (Not recommended if your RSS reader extracts images from description) | `0`/`1`/`true`/`false` | `false`     |\n| `showAuthorAvatarInDesc`       | Show avatar of author in description (RSS body) (Not recommended if your RSS reader extracts images from description)        | `0`/`1`/`true`/`false` | `falseP`    |\n| `showEmojiForQuotesAndReply`   | Use \"🔁\" instead of \"QT\", \"↩️\" instead of \"Re\"                                                                               | `0`/`1`/`true`/`false` | `true`      |\n| `showQuotedInTitle`            | Show quoted tweet in title                                                                                                   | `0`/`1`/`true`/`false` | `true`      |\n| `replies`                      | Show replies                                                                                                                 | `0`/`1`/`true`/`false` | `true`      |"
           }
         },
         "name": "User timeline",
@@ -91537,6 +92408,309 @@
   },
   "tmtpost": {
     "routes": {
+      "/column/:id": {
+        "path": "/column/:id",
+        "name": "最新",
+        "url": "www.tmtpost.com",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/tmtpost/column/6916385",
+        "parameters": {
+          "id": {
+            "description": "专栏 id，可在对应专栏页 URL 中找到",
+            "options": [
+              {
+                "label": "AGI",
+                "value": "6916385"
+              },
+              {
+                "label": "出海",
+                "value": "6998081"
+              },
+              {
+                "label": "创新场景",
+                "value": "3882035"
+              },
+              {
+                "label": "钛度号",
+                "value": "6100587"
+              },
+              {
+                "label": "深度",
+                "value": "3189960"
+              },
+              {
+                "label": "焦点",
+                "value": "6043895"
+              },
+              {
+                "label": "创投",
+                "value": "5994956"
+              },
+              {
+                "label": "汽车",
+                "value": "2573550"
+              },
+              {
+                "label": "3C",
+                "value": "3615534"
+              },
+              {
+                "label": "消费",
+                "value": "3882530"
+              },
+              {
+                "label": "大健康",
+                "value": "3882507"
+              },
+              {
+                "label": "金融",
+                "value": "3882486"
+              },
+              {
+                "label": "钛智宏观",
+                "value": "4277188"
+              },
+              {
+                "label": "产业研究",
+                "value": "5506730"
+              },
+              {
+                "label": "地产",
+                "value": "3882499"
+              },
+              {
+                "label": "大公司",
+                "value": "2446153"
+              },
+              {
+                "label": "IPO",
+                "value": "6043750"
+              },
+              {
+                "label": "钛度图闻",
+                "value": "5750087"
+              },
+              {
+                "label": "城视",
+                "value": "6998636"
+              },
+              {
+                "label": "创业家",
+                "value": "4273329"
+              },
+              {
+                "label": "人文",
+                "value": "6252390"
+              },
+              {
+                "label": "新职业研究所",
+                "value": "5750104"
+              },
+              {
+                "label": "科普",
+                "value": "5714992"
+              },
+              {
+                "label": "文娱",
+                "value": "2446157"
+              }
+            ]
+          }
+        },
+        "description": ":::tip\n若订阅 [AGI](https://www.tmtpost.com/column/6916385)，网址为 `https://www.tmtpost.com/column/6916385`，请截取 `https://www.tmtpost.com/column` 到末尾的部分 `6916385` 作为 `id` 参数填入，此时目标路由为 [`/tmtpost/column/6916385`](https://rsshub.app/tmtpost/column/6916385)。\n:::\n\n<details>\n  <summary>更多分类</summary>\n\n  | [AGI](https://www.tmtpost.com/column/6916385)        | [出海](https://www.tmtpost.com/column/6998081)       | [创新场景](https://www.tmtpost.com/column/3882035)   | [钛度号](https://www.tmtpost.com/column/6100587)     | [深度](https://www.tmtpost.com/column/3189960)       |\n  | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |\n  | [6916385](https://rsshub.app/tmtpost/column/6916385) | [6998081](https://rsshub.app/tmtpost/column/6998081) | [3882035](https://rsshub.app/tmtpost/column/3882035) | [6100587](https://rsshub.app/tmtpost/column/6100587) | [3189960](https://rsshub.app/tmtpost/column/3189960) |\n\n  | [焦点](https://www.tmtpost.com/column/6043895)       | [创投](https://www.tmtpost.com/column/5994956)       | [汽车](https://www.tmtpost.com/column/2573550)       | [3C](https://www.tmtpost.com/column/3615534)         | [消费](https://www.tmtpost.com/column/3882530)       |\n  | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |\n  | [6043895](https://rsshub.app/tmtpost/column/6043895) | [5994956](https://rsshub.app/tmtpost/column/5994956) | [2573550](https://rsshub.app/tmtpost/column/2573550) | [3615534](https://rsshub.app/tmtpost/column/3615534) | [3882530](https://rsshub.app/tmtpost/column/3882530) |\n\n  | [大健康](https://www.tmtpost.com/column/3882507)     | [金融](https://www.tmtpost.com/column/3882486)       | [钛智宏观](https://www.tmtpost.com/column/4277188)   | [产业研究](https://www.tmtpost.com/column/5506730)   | [地产](https://www.tmtpost.com/column/3882499)       |\n  | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |\n  | [3882507](https://rsshub.app/tmtpost/column/3882507) | [3882486](https://rsshub.app/tmtpost/column/3882486) | [4277188](https://rsshub.app/tmtpost/column/4277188) | [5506730](https://rsshub.app/tmtpost/column/5506730) | [3882499](https://rsshub.app/tmtpost/column/3882499) |\n\n  | [大公司](https://www.tmtpost.com/column/2446153)     | [IPO](https://www.tmtpost.com/column/6043750)        | [钛度图闻](https://www.tmtpost.com/column/5750087)   | [城视](https://www.tmtpost.com/column/6998636)       | [创业家](https://www.tmtpost.com/column/4273329)     |\n  | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |\n  | [2446153](https://rsshub.app/tmtpost/column/2446153) | [6043750](https://rsshub.app/tmtpost/column/6043750) | [5750087](https://rsshub.app/tmtpost/column/5750087) | [6998636](https://rsshub.app/tmtpost/column/6998636) | [4273329](https://rsshub.app/tmtpost/column/4273329) |\n\n  | [人文](https://www.tmtpost.com/column/6252390)       | [新职业研究所](https://www.tmtpost.com/column/5750104) | [科普](https://www.tmtpost.com/column/5714992)       | [文娱](https://www.tmtpost.com/column/2446157)       |\n  | ---------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------- | ---------------------------------------------------- |\n  | [6252390](https://rsshub.app/tmtpost/column/6252390) | [5750104](https://rsshub.app/tmtpost/column/5750104)   | [5714992](https://rsshub.app/tmtpost/column/5714992) | [2446157](https://rsshub.app/tmtpost/column/2446157) |\n\n</details>\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.tmtpost.com/column/:id"
+            ],
+            "target": "/column/:id"
+          },
+          {
+            "title": "AGI",
+            "source": [
+              "www.tmtpost.com/column/6916385"
+            ],
+            "target": "/column/6916385"
+          },
+          {
+            "title": "出海",
+            "source": [
+              "www.tmtpost.com/column/6998081"
+            ],
+            "target": "/column/6998081"
+          },
+          {
+            "title": "创新场景",
+            "source": [
+              "www.tmtpost.com/column/3882035"
+            ],
+            "target": "/column/3882035"
+          },
+          {
+            "title": "钛度号",
+            "source": [
+              "www.tmtpost.com/column/6100587"
+            ],
+            "target": "/column/6100587"
+          },
+          {
+            "title": "深度",
+            "source": [
+              "www.tmtpost.com/column/3189960"
+            ],
+            "target": "/column/3189960"
+          },
+          {
+            "title": "焦点",
+            "source": [
+              "www.tmtpost.com/column/6043895"
+            ],
+            "target": "/column/6043895"
+          },
+          {
+            "title": "创投",
+            "source": [
+              "www.tmtpost.com/column/5994956"
+            ],
+            "target": "/column/5994956"
+          },
+          {
+            "title": "汽车",
+            "source": [
+              "www.tmtpost.com/column/2573550"
+            ],
+            "target": "/column/2573550"
+          },
+          {
+            "title": "3C",
+            "source": [
+              "www.tmtpost.com/column/3615534"
+            ],
+            "target": "/column/3615534"
+          },
+          {
+            "title": "消费",
+            "source": [
+              "www.tmtpost.com/column/3882530"
+            ],
+            "target": "/column/3882530"
+          },
+          {
+            "title": "大健康",
+            "source": [
+              "www.tmtpost.com/column/3882507"
+            ],
+            "target": "/column/3882507"
+          },
+          {
+            "title": "金融",
+            "source": [
+              "www.tmtpost.com/column/3882486"
+            ],
+            "target": "/column/3882486"
+          },
+          {
+            "title": "钛智宏观",
+            "source": [
+              "www.tmtpost.com/column/4277188"
+            ],
+            "target": "/column/4277188"
+          },
+          {
+            "title": "产业研究",
+            "source": [
+              "www.tmtpost.com/column/5506730"
+            ],
+            "target": "/column/5506730"
+          },
+          {
+            "title": "地产",
+            "source": [
+              "www.tmtpost.com/column/3882499"
+            ],
+            "target": "/column/3882499"
+          },
+          {
+            "title": "大公司",
+            "source": [
+              "www.tmtpost.com/column/2446153"
+            ],
+            "target": "/column/2446153"
+          },
+          {
+            "title": "IPO",
+            "source": [
+              "www.tmtpost.com/column/6043750"
+            ],
+            "target": "/column/6043750"
+          },
+          {
+            "title": "钛度图闻",
+            "source": [
+              "www.tmtpost.com/column/5750087"
+            ],
+            "target": "/column/5750087"
+          },
+          {
+            "title": "城视",
+            "source": [
+              "www.tmtpost.com/column/6998636"
+            ],
+            "target": "/column/6998636"
+          },
+          {
+            "title": "创业家",
+            "source": [
+              "www.tmtpost.com/column/4273329"
+            ],
+            "target": "/column/4273329"
+          },
+          {
+            "title": "人文",
+            "source": [
+              "www.tmtpost.com/column/6252390"
+            ],
+            "target": "/column/6252390"
+          },
+          {
+            "title": "新职业研究所",
+            "source": [
+              "www.tmtpost.com/column/5750104"
+            ],
+            "target": "/column/5750104"
+          },
+          {
+            "title": "科普",
+            "source": [
+              "www.tmtpost.com/column/5714992"
+            ],
+            "target": "/column/5714992"
+          },
+          {
+            "title": "文娱",
+            "source": [
+              "www.tmtpost.com/column/2446157"
+            ],
+            "target": "/column/2446157"
+          }
+        ],
+        "view": 0,
+        "location": "column.ts"
+      },
       "/new": {
         "path": "/new",
         "name": "最新",
@@ -92012,6 +93186,66 @@
     "name": "TOPYS",
     "url": "topys.cn",
     "lang": "zh-CN"
+  },
+  "toranoana": {
+    "routes": {
+      "/news/:category?": {
+        "path": "/news/:category?",
+        "categories": [
+          "anime"
+        ],
+        "example": "/toranoana/news/toragen",
+        "parameters": {
+          "category": "category"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Category",
+        "maintainers": [
+          "Tsuyumi25"
+        ],
+        "radar": [
+          {
+            "title": "総合新着記事",
+            "source": [
+              "news.toranoana.jp"
+            ],
+            "target": "/news"
+          },
+          {
+            "title": "女性向け",
+            "source": [
+              "news.toranoana.jp/joshi"
+            ],
+            "target": "/news/joshi"
+          },
+          {
+            "title": "イラスト展",
+            "source": [
+              "news.toranoana.jp/exhibitions"
+            ],
+            "target": "/news/exhibition"
+          },
+          {
+            "source": [
+              "news.toranoana.jp/category/:category"
+            ],
+            "target": "/news/:category"
+          }
+        ],
+        "description": "\n::: warning TIP\n[総合新着記事](https://news.toranoana.jp)→`/toranoana/news`  \n[女性向け](https://news.toranoana.jp/joshi)→`/toranoana/news/joshi`  \n[イラスト展](https://news.toranoana.jp/exhibitions)→`/toranoana/news/exhibition`  \n[`https://news.toranoana.jp/category/media`](https://news.toranoana.jp/category/media)→`/toranoana/news/media`\n:::",
+        "location": "news.ts"
+      }
+    },
+    "name": "とらのあな",
+    "url": "toranoana.jp",
+    "lang": "ja"
   },
   "toutiao": {
     "routes": {
@@ -96328,6 +97562,144 @@
   },
   "wainao": {
     "routes": {
+      "/topics/:id?": {
+        "path": "/topics/:id?",
+        "name": "主题",
+        "url": "wainao.me",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/wainao/topics/hotspot",
+        "parameters": {
+          "id": {
+            "description": "主题 id，默认为 `hotspot`，即热点，可在对应主题页 URL 中找到",
+            "options": [
+              {
+                "label": "热点",
+                "value": "hotspot"
+              },
+              {
+                "label": "人物",
+                "value": "people"
+              },
+              {
+                "label": "身份",
+                "value": "identity"
+              },
+              {
+                "label": "政治",
+                "value": "politics"
+              },
+              {
+                "label": "社会",
+                "value": "society"
+              },
+              {
+                "label": "文化",
+                "value": "culture"
+              },
+              {
+                "label": "经济",
+                "value": "economics"
+              },
+              {
+                "label": "环境",
+                "value": "environment"
+              },
+              {
+                "label": "FUN",
+                "value": "fun"
+              }
+            ]
+          }
+        },
+        "description": ":::tip\n若订阅 [人物](https://www.wainao.me/topics/people)，网址为 `https://www.wainao.me/topics/people`，请截取 `https://www.wainao.me/topics/` 到末尾的部分 `people` 作为 `id` 参数填入，此时目标路由为 [`/wainao/topics/people`](https://rsshub.app/wainao/topics/people)。\n:::\n\n| [热点](https://www.wainao.me/topics/hotspot)        | [人物](https://www.wainao.me/topics/people)       | [身份](https://www.wainao.me/topics/identity)         | [政治](https://www.wainao.me/topics/politics)         | [社会](https://www.wainao.me/topics/society)        | [文化](https://www.wainao.me/topics/culture)        | [经济](https://www.wainao.me/topics/economics)          | [环境](https://www.wainao.me/topics/environment)            | [FUN](https://www.wainao.me/topics/fun)     |\n| --------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------- |\n| [hotspot](https://rsshub.app/wainao/topics/hotspot) | [people](https://rsshub.app/wainao/topics/people) | [identity](https://rsshub.app/wainao/topics/identity) | [politics](https://rsshub.app/wainao/topics/politics) | [society](https://rsshub.app/wainao/topics/society) | [culture](https://rsshub.app/wainao/topics/culture) | [economics](https://rsshub.app/wainao/topics/economics) | [environment](https://rsshub.app/wainao/topics/environment) | [fun](https://rsshub.app/wainao/topics/fun) |\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.wainao.me/topics/:id"
+            ],
+            "target": "/topics/:id"
+          },
+          {
+            "title": "热点",
+            "source": [
+              "www.wainao.me/topics/hotspot"
+            ],
+            "target": "/topics/hotspot"
+          },
+          {
+            "title": "人物",
+            "source": [
+              "www.wainao.me/topics/people"
+            ],
+            "target": "/topics/people"
+          },
+          {
+            "title": "身份",
+            "source": [
+              "www.wainao.me/topics/identity"
+            ],
+            "target": "/topics/identity"
+          },
+          {
+            "title": "政治",
+            "source": [
+              "www.wainao.me/topics/politics"
+            ],
+            "target": "/topics/politics"
+          },
+          {
+            "title": "社会",
+            "source": [
+              "www.wainao.me/topics/society"
+            ],
+            "target": "/topics/society"
+          },
+          {
+            "title": "文化",
+            "source": [
+              "www.wainao.me/topics/culture"
+            ],
+            "target": "/topics/culture"
+          },
+          {
+            "title": "经济",
+            "source": [
+              "www.wainao.me/topics/economics"
+            ],
+            "target": "/topics/economics"
+          },
+          {
+            "title": "环境",
+            "source": [
+              "www.wainao.me/topics/environment"
+            ],
+            "target": "/topics/environment"
+          },
+          {
+            "title": "FUN",
+            "source": [
+              "www.wainao.me/topics/fun"
+            ],
+            "target": "/topics/fun"
+          }
+        ],
+        "view": 0,
+        "location": "topics.ts"
+      },
       "/wainao-reads": {
         "path": "/wainao-reads",
         "categories": [
